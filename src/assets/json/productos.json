@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nombre": "Almendras",
+        "descripcion": "Almendras crudas, ricas en proteínas y ácidos grasos saludables.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 250.00,
+        "stock": 50,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 2,
+        "nombre": "Nueces",
+        "descripcion": "Nueces frescas, fuente de omega-3 y antioxidantes.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 300.00,
+        "stock": 30,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 3,
+        "nombre": "Cacahuetes",
+        "descripcion": "Cacahuetes tostados y salados, perfectos como snack.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 180.00,
+        "stock": 60,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 4,
+        "nombre": "Avellanas",
+        "descripcion": "Avellanas crujientes, ideales para acompañar postres o ensaladas.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 280.00,
+        "stock": 40,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 5,
+        "nombre": "Pistachos",
+        "descripcion": "Pistachos salados y pelados, fuente de fibra y nutrientes.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 350.00,
+        "stock": 25,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 6,
+        "nombre": "Anacardos",
+        "descripcion": "Anacardos crudos, con un sabor suave y textura cremosa.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 210.00,
+        "stock": 35,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 7,
+        "nombre": "Piñones",
+        "descripcion": "Piñones frescos, utilizados en recetas de cocina y repostería.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 450.00,
+        "stock": 20,
+        "categoria": "Frutos Secos"
+    },
+    {
+        "id": 8,
+        "nombre": "Macadamias",
+        "descripcion": "Macadamias premium, con un sabor rico y cremoso.",
+        "url_imagen": "/almendras.jpg",
+        "precio": 550.00,
+        "stock": 15,
+        "categoria": "Frutos Secos"
+    }
+]
