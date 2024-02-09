@@ -23,7 +23,7 @@ export const SectionProduct = () => {
               key={producto.id}
               nombre={producto.nombre}
               descripcion={producto.descripcion}
-              img={producto.url_imagen}
+              img={producto.img}
               precio={producto.precio}
             />
           ))}

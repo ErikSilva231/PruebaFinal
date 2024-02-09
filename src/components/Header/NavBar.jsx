@@ -12,7 +12,7 @@ function NavBar() {
       <img src="../../../public/logo-02.png" alt="..." width="75%" />
     </a>
         <div className="collapse navbar-collapse" id="navbar">
-          <ul className="navbar-nav">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to="/frutos-secos"> Frutos Secos</Link>
             </li>
@@ -26,6 +26,9 @@ function NavBar() {
               <Link className="nav-link" to="/infusiones">Infusiones</Link>
             </li>
           </ul>
+          <button type="button" class="btn btn-primary px-5 py-2"> <Link className="nav-link" to="/addProduct">Agregar producto</Link></button>
+          <span className="px-4 fs-1"> <Link className="nav-link" to="/cart">🛒</Link></span>
+        
         </div>
       </div>
     </nav>
@@ -34,3 +37,5 @@ function NavBar() {
 
 
 export default NavBar;
+
+

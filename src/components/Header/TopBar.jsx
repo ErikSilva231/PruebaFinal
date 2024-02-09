@@ -30,6 +30,8 @@ function TopBar() {
             <li className="nav-item">
               <Link className="nav-link" to="/contacto">Contacto</Link>
             </li>
+            <span className="d-block d-xl-none"> <Link className="nav-link" to="/cart">Ver carrito🛒</Link></span>
+            <button type="button" class="btn btn-primary d-block d-xl-none"> <Link className="nav-link text-white" to="/addProduct">Agregar producto</Link></button>
           </ul>
         </div>
       </div>
