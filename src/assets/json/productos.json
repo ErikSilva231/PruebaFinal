@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Almendras",
         "descripcion": "Almendras crudas, ricas en proteínas y ácidos grasos saludables.",
-        "url_imagen": "/almendras.jpg",
+        "url_imagen": "/public/almendras.jpg",
         "precio": 250.00,
         "stock": 50,
         "categoria": "Frutos Secos"

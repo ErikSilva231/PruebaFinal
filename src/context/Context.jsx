@@ -16,9 +16,8 @@ export const Provider = ({ children }) => {
     precio: 0,
   });
 
-  // El archivo pizzas.json se encuentra en la carpeta public
   const getProductos = async () => {
-    const response = await fetch("src/assets/pizzas.json");
+    const response = await fetch("src/assets/json/productos.json");
     const data = await response.json();
     console.log(data);
     setProductos(data);

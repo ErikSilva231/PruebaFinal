@@ -1,32 +1,31 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/css/CardProduct.css";
 
 const CardProduct = ({ id, img, nombre, descripcion, precio }) => {
   return (
-    <div class="container page-wrapper">
-      <div class="page-inner">
-        <div class="row">
-          <div class="el-wrapper">
-            <div class="box-up">
-              <img class="img" src={img} alt="" />
-              <div class="img-info">
-                <div class="info-inner">
-                  <span class="p-name">{nombre}</span>
+    <div className="container page-wrapper">
+      <div className="page-inner">
+        <div className="row">
+          <div className="el-wrapper">
+            <div className="box-up">
+              <img className="img" src={img} alt="" />
+              <div className="img-info">
+                <div className="info-inner">
+                  <span className="p-name">{nombre}</span>
                 </div>
-                <div class="a-size">
-                  <span class="size">{descripcion}</span>
+                <div className="a-size">
+                  <span className="size">{descripcion}</span>
                 </div>
               </div>
             </div>
-            <div class="box-down">
-              <div class="h-bg">
-                <div class="h-bg-inner"></div>
+            <div className="box-down">
+              <div className="h-bg">
+                <div className="h-bg-inner"></div>
               </div>
-              <a class="cart" href="#">
-                <span class="price">{precio}</span>
-                <span class="add-to-cart">
-                  <span class="txt">Agregar al carro</span>
+              <a className="cart" href="#">
+                <span className="price">{precio}</span>
+                <span className="add-to-cart">
+                  <span className="txt">Agregar al carro</span>
                 </span>
               </a>
             </div>

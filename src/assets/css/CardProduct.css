@@ -2,7 +2,10 @@ body,
 html {
   height: 100%;
 }
-
+.img {
+  width: 360px;
+  height: 390px;
+}
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
