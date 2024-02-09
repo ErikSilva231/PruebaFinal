@@ -6,6 +6,11 @@ html {
   width: 360px;
   height: 390px;
 }
+
+.box-up img:hover {
+  cursor: pointer;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;

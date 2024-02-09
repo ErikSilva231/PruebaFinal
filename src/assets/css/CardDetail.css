@@ -24,9 +24,10 @@
 
 .outer img {
   width: "400px";
+  height: 600px;
 }
 
-img {
+.imagen {
   position: absolute;
   top: 0px;
   right: -20px;

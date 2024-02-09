@@ -9,7 +9,7 @@ import Products from "./views/Products";
 import Profile from "./views/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/Header/NavBar";
-import { Provider } from "./context/context";
+import { Provider } from "./context/Context";
 
 function App() {
   return (
