@@ -7,6 +7,7 @@ import AddProduct from "./views/AddProduct";
 import ProductDetail from "./views/ProductDetail";
 import Products from "./views/Products";
 import Profile from "./views/Profile";
+import Cart from "./views/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/Header/NavBar";
 import { Provider } from "./context/Context";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/addProduct" element={<AddProduct />} />
+            <Route path="/Cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
       </Provider>

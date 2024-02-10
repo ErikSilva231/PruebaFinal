@@ -14,6 +14,7 @@ export const Provider = ({ children }) => {
     img: "",
     descripcion: "",
     precio: 0,
+    categoria: "",
   });
 
   const getProductos = async () => {
