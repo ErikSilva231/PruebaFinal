@@ -11,8 +11,13 @@ function SectionCategory() {
               className="card-img-top"
               alt="..."
             />
+                                 <h5 type="button" href="#" className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-2">BARRAS DE PROTEINAS</h5>
+
           </div>
-      </div>
+
+          
+          </div>
+          
       <div className="col-sm-12 col-md-6 col-xl-3 mt-5">
           <div className="card">
             <img
@@ -20,6 +25,8 @@ function SectionCategory() {
               className="card-img-top"
               alt="..."
             />
+                                 <h5 type="button" href="#" className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-4">CACAO</h5>
+
           </div>
           </div>
           <div className="col-sm-12 col-md-6 col-xl-3 mt-5">
@@ -29,6 +36,8 @@ function SectionCategory() {
               className="card-img-top"
               alt="..."
             />
+                                 <h5 type="button" href="#" className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-4">FRUTOS SECOS</h5>
+
           </div>
           </div>
           <div className="col-sm-12 col-md-6 col-xl-3 mt-5">
@@ -38,6 +47,8 @@ function SectionCategory() {
               className="card-img-top"
               alt="..."
             />
+                                 <h5 type="button" href="#" className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-4">INFUSIONES</h5>
+
           </div>
           </div>
     </div>
