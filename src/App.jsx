@@ -11,6 +11,7 @@ import Cart from "./views/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/Header/NavBar";
 import { Provider } from "./context/Context";
+import Cart2 from "./views/Cart2";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/addProduct" element={<AddProduct />} />
-            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Cart" element={<Cart2 />} />
           </Routes>
         </BrowserRouter>
       </Provider>
