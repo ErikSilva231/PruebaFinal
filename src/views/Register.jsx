@@ -8,27 +8,24 @@ function Register() {
     phone: "",
     password: "",
   });
-  const [valid, setValid] = useState({
-    name: true,
-    surname: true,
-    email: true,
-    phone: true,
-    password: true,
-  });
-  const [feedback, setFeedback] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-    password: "",
-  });
+  const [validName, setValidName] = useState(true);
+  const [validSurname, setValidSurname] = useState(true);
+  const [validEmail, setValidEmail] = useState(true);
+  const [validPhone, setValidPhone] = useState(true);
+  const [validPassword, setValidPassword] = useState(true);
+
+  const [feedbackName, setFeedbackName] = useState(true);
+  const [feedbackSurname, setFeedbackSurname] = useState(true);
+  const [feedbackEmail, setFeedbackEmail] = useState(true);
+  const [feedbackPhone, setFeedbackPhone] = useState(true);
+  const [feedbackPassword, setFeedbackPassword] = useState(true);
 
   const classInput = {
-    name: `form-control ${valid.name ? "" : "is-invalid"}`,
-    surname: `form-control ${valid.surname ? "" : "is-invalid"}`,
-    email: `form-control ${valid.email ? "" : "is-invalid"}`,
-    phone: `form-control ${valid.phone ? "" : "is-invalid"}`,
-    password: `form-control ${valid.password ? "" : "is-invalid"}`,
+    name: `form-control ${validName ? "" : "is-invalid"}`,
+    surname: `form-control ${validSurname ? "" : "is-invalid"}`,
+    email: `form-control ${validEmail ? "" : "is-invalid"}`,
+    phone: `form-control ${validPhone ? "" : "is-invalid"}`,
+    password: `form-control ${validPassword ? "" : "is-invalid"}`,
   };
 
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -40,6 +37,19 @@ function Register() {
 
   const handleForm = (event) => {
     event.preventDefault();
+
+    setValidName(true);
+    setValidSurname(true);
+    setValidEmail(true);
+    setValidPhone(true);
+    setValidPassword(true);
+
+    setFeedbackName(true);
+    setFeedbackSurname(true);
+    setFeedbackEmail(true);
+    setFeedbackPhone(true);
+    setFeedbackPassword(true);
+
     if (
       !user.email.trim() ||
       !user.password.trim() ||
@@ -47,29 +57,39 @@ function Register() {
       !user.surname.trim() ||
       !user.phone.trim()
     ) {
-      setValid({
-        name: false,
-        surname: false,
-        email: false,
-        phone: false,
-        password: false,
-      });
-      setFeedback({
-        name: "Todos los campos son obligatorias.",
-        surname: "Todos los campos son obligatorias.",
-        email: "Todos los campos son obligatorias.",
-        phone: "Todos los campos son obligatorias.",
-        password: "Todos los campos son obligatorias.",
-      });
+      setValidName(false);
+      setValidSurname(false);
+      setValidEmail(false);
+      setValidPhone(false);
+      setValidPassword(false);
+
+      setFeedbackName("Todos los campos son obligatorias.");
+      setFeedbackSurname("Todos los campos son obligatorias.");
+      setFeedbackEmail("Todos los campos son obligatorias.");
+      setFeedbackPhone("Todos los campos son obligatorias.");
+      setFeedbackPassword("Todos los campos son obligatorias.");
+
       return;
     }
 
     if (!emailRegex.test(user.email)) {
-      return window.alert("El formato del email no es correcto!");
+      setValidEmail(false);
+      setFeedbackEmail("El formato del email no es correcto");
+      return;
     }
 
     if (!phoneRegex.test(user.phone)) {
-      return window.alert("El formato del telefono no es correcto!");
+      setValidPhone(false);
+      setFeedbackPhone("El formato del telefono no es correcto");
+      return;
+    }
+
+    if (!passRegex.test(user.phone)) {
+      setValidPassword(false);
+      setFeedbackPassword(
+        "Contraseña debe tener al menos 8 caracteres y debe contener mayusculas, minusculas y caracteres especiales @#$%^&*_"
+      );
+      return;
     }
     //Logica para llamar a la api para registrarse
   };
@@ -92,7 +112,7 @@ function Register() {
             placeholder="Ingresa tu nombre"
           />
           <label className="invalid-feedback">
-            {valid.name ? "" : feedback.name}
+            {validName ? "" : feedbackName}
           </label>
         </div>
         <div>
@@ -105,7 +125,7 @@ function Register() {
             placeholder="Ingresa tus Apellidos"
           />
           <label className="invalid-feedback">
-            {valid.surname ? "" : feedback.surname}
+            {validSurname ? "" : feedbackSurname}
           </label>
         </div>
         <div>
@@ -118,7 +138,7 @@ function Register() {
             placeholder="Ingresa tu correo electrónico"
           />
           <label className="invalid-feedback">
-            {valid.email ? "" : feedback.email}
+            {validEmail ? "" : feedbackEmail}
           </label>
         </div>
         <div>
@@ -131,7 +151,7 @@ function Register() {
             placeholder="Ingresa tu correo electrónico"
           />
           <label className="invalid-feedback">
-            {valid.phone ? "" : feedback.phone}
+            {validPhone ? "" : feedbackPhone}
           </label>
         </div>
         <div>
@@ -144,7 +164,7 @@ function Register() {
             placeholder="Ingresa tu contraseña"
           />
           <label className="invalid-feedback">
-            {valid.password ? "" : feedback.password}
+            {validPassword ? "" : feedbackPassword}
           </label>
         </div>
         <div>
@@ -156,7 +176,7 @@ function Register() {
             placeholder="Re-Ingresa tu contraseña"
           />
           <label className="invalid-feedback">
-            {valid.password ? "" : feedback.password}
+            {validPassword ? "" : feedbackPassword}
           </label>
         </div>
         <button type="submit" className="btn btn-secondary">
