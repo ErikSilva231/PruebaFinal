@@ -5,13 +5,7 @@ import CardProduct from "./CardProduct";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const SectionProduct = () => {
-  const { productos, carrito, setCarrito } = useContext(Context);
-
-  const navigate = useNavigate();
-
-  const irAproductos = (id) => {
-    navigate(`/productoDetail/${id}`);
-  };
+  const { productos } = useContext(Context);
 
   return (
     <>

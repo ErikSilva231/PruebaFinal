@@ -11,10 +11,11 @@ export const CardDetail = ({ id }) => {
     useContext(Context);
   const [selectedOption, setSelectedOption] = useState(null);
   const [precio, setPrecio] = useState(0);
+  const [cantidad, setCantidad] = useState(1);
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    switch (option) {
+  const handleOptionClick = (opcion) => {
+    setSelectedOption(opcion);
+    switch (opcion) {
       case "100grs":
         return setPrecio(producto.precio);
       case "250grs":
@@ -33,8 +34,20 @@ export const CardDetail = ({ id }) => {
   };
 
   const agregarProducto = (producto) => {
-    setCarrito([...carrito, producto]);
+    const productoSeleccionado = {
+      producto,
+      cantidad: cantidad,
+      opcion: selectedOption,
+      precio: precio,
+      precioTotal: precio * cantidad,
+    };
+    setCarrito([...carrito, productoSeleccionado]);
     navigate(`/Cart`);
+  };
+
+  const HandleChange = (e) => {
+    const targetValue = e.target.value;
+    setCantidad(targetValue);
   };
 
   useEffect(() => {
@@ -127,6 +140,8 @@ export const CardDetail = ({ id }) => {
                     type="number"
                     className="form-control"
                     id="cart_quantity"
+                    onChange={HandleChange}
+                    value={cantidad}
                     min="1"
                     max="5"
                   />

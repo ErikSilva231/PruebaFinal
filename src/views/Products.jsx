@@ -1,11 +1,10 @@
+import { SectionProduct } from "../components/Product/SectionProduct";
 function Products() {
-  
+  return (
+    <>
+      <SectionProduct />
+    </>
+  );
+}
 
-    return (
-      <>
-      </>
-    )
-  }
-  
-  export default Products
-  
+export default Products;

@@ -8,10 +8,11 @@ const Cart2 = () => {
   const calcularTotal = () => {
     let parcial = 0;
     carrito.forEach((ele) => {
-      parcial = ele.precio + parcial;
+      parcial = ele.precio * ele.cantidad + parcial;
     });
     setTotal(parcial);
   };
+
   useEffect(() => {
     calcularTotal();
   });
@@ -23,7 +24,7 @@ const Cart2 = () => {
           <div className="col-xl-9 col-md-8">
             <h2 className="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">
               <span>Productos</span>
-              <a className="font-size-sm" href="#">
+              <a className="font-size-sm" href="/Products">
                 Continuar comprando
               </a>
             </h2>
@@ -34,22 +35,23 @@ const Cart2 = () => {
               >
                 <div className="media d-block d-sm-flex text-left text-sm-left">
                   <div className="cart-item-thumb mx-auto mr-sm-4 m-2" href="#">
-                    <img src={producto.img} alt="Product" />
+                    <img src={producto.producto.img} alt="Product" />
                   </div>
                   <div className="media-body pt-3">
                     <h3 className="product-card-title font-weight-semibold border-0 pb-0">
-                      <a href="#">{producto.nombre}</a>
+                      <a href="#">{producto.producto.nombre}</a>
                     </h3>
                     <div className="font-size-sm">
-                      <span className="text-muted mr-2">Categoria:</span>
-                      {producto.categoria}
+                      <span className="text-muted mr-2">Categoria: </span>
+                      {producto.producto.categoria}
                     </div>
                     <div className="font-size-sm">
-                      <span className="text-muted mr-2">Color:</span>Black
+                      <span className="text-muted mr-2">Cantidad: </span>
+                      {producto.cantidad}
                     </div>
                     <div className="font-size-lg text-primary pt-2">
                       ${" "}
-                      {producto.precio
+                      {producto.precioTotal
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                     </div>
@@ -57,12 +59,7 @@ const Cart2 = () => {
                 </div>
                 <div className="botones-cart pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left">
                   <div className="form-group mb-2"></div>
-                  <button
-                    className="btn btn-outline-secondary btn-sm btn-block mb-2"
-                    type="button"
-                  >
-                    Actualizar Carrito
-                  </button>
+
                   <button
                     className="btn btn-outline-danger btn-sm btn-block mb-2"
                     type="button"
