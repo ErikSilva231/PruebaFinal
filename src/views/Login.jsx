@@ -4,7 +4,11 @@ function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const [validPass, setValidPass] = useState(true);
   const [validEmail, setValidEmail] = useState(true);
+  const [feedbackPass, setFeedbackPass] = useState("");
+  const [feedbackEmail, setFeedbackEmail] = useState("");
+
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
   const classInputPass = `form-control ${validPass ? "" : "is-invalid"}`;
   const classInputEmail = `form-control ${validEmail ? "" : "is-invalid"}`;
 
@@ -19,12 +23,14 @@ function Login() {
     if (!user.email.trim() || !user.password.trim()) {
       setValidEmail(false);
       setValidPass(false);
-      return window.alert("Email y password obligatorias.");
+      setFeedbackPass("Email y password  son obligatorias");
+      setFeedbackEmail("Email y password  son obligatorias");
+      return;
     }
 
     if (!emailRegex.test(user.email)) {
       setValidEmail(false);
-      return window.alert("El formato del email no es correcto!");
+      setFeedbackEmail("El formato del email no es correcto");
     }
   };
   return (
@@ -43,6 +49,9 @@ function Login() {
             className={classInputEmail}
             placeholder="Ingresa tu correo electrónico"
           />
+          <label className="invalid-feedback">
+            {validEmail ? "" : feedbackEmail}
+          </label>
         </div>
         <div>
           <label className="form-lebel">Contraseña</label>
@@ -53,6 +62,9 @@ function Login() {
             className={classInputPass}
             placeholder="Ingresa tu contraseña"
           />
+          <label className="invalid-feedback">
+            {validPass ? "" : feedbackPass}
+          </label>
           <a href="">¿Olvidaste tu contraseña?</a>
         </div>
         <button type="submit" className="btn btn-secondary">
