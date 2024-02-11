@@ -80,7 +80,7 @@ function Register() {
         className="bg-white p-5 w-50 d-flex flex-column gap-3"
       >
         <p className="fs-2">
-          !Bienvenido! Ingresa tus datos y disfruta una experiencia de comprar
+          !Bienvenido! Ingresa tus datos y disfruta una experiencia de compra
         </p>
         <div>
           <label className="form-lebel">Nombre</label>
