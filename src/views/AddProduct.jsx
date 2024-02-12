@@ -10,7 +10,9 @@ function AddProduct() {
     variants: [{ variant: "", price: 0, stock: 0 }],
   });
   const [cantVariant, setCantVariant] = useState(0);
-  const [variants, setVariants] = useState([{}]);
+  const [variants, setVariants] = useState([
+    { variant: "", price: 0, stock: 0 },
+  ]);
 
   const [validName, setValidName] = useState(true);
   const [validDescription, setValidDescription] = useState(true);
@@ -33,6 +35,12 @@ function AddProduct() {
 
   const handleProduct = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
+  };
+  const handleChangeVariant = (event) => {
+    const [key, index] = event.target.name.split("-");
+    const arrayVariants = variants;
+    arrayVariants[index][key] = event.target.value;
+    setVariants(arrayVariants);
   };
 
   const handleForm = (event) => {
@@ -68,7 +76,7 @@ function AddProduct() {
   };
   const addVariant = () => {
     setCantVariant(cantVariant + 1);
-    setVariants([...variants, {}]);
+    setVariants([...variants, { variant: "", price: 0, stock: 0 }]);
   };
   const removeVariant = () => {
     if (!cantVariant == 0) {
@@ -118,7 +126,7 @@ function AddProduct() {
                 onChange={handleProduct}
                 className={classInput.category}
               >
-                <option selected>Seleccione una categoría</option>
+                <option defaultValue>Seleccione una categoría</option>
                 <option value="CAT001">Frutos Secos</option>
                 <option value="CAT002">Barras de Cereal</option>
                 <option value="CAT003">Cacao y chocolates</option>
@@ -148,7 +156,13 @@ function AddProduct() {
             <div className="d-flex flex-column gap-1">
               <label className="form-lebel">Variantes</label>
               {variants.map((variant, index) => {
-                return <InputVariant key={index} num={index} />;
+                return (
+                  <InputVariant
+                    key={index}
+                    num={index}
+                    handleChangeVariant={handleChangeVariant}
+                  />
+                );
               })}
               <div className="d-flex flex-row-reverse gap-3">
                 <button className="btn btn-secondary" onClick={addVariant}>
