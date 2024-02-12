@@ -33,7 +33,6 @@ function AddProduct() {
 
   const handleProduct = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
-    console.log(product);
   };
 
   const handleForm = (event) => {
@@ -64,7 +63,6 @@ function AddProduct() {
       setFeedbackDescription("Todos los campos son obligatorias");
       setFeedbackCategory("Todos los campos son obligatorias");
       setFeedbackImg("Todos los campos son obligatorias");
-      console.log("HOLA");
       return;
     }
   };
@@ -72,11 +70,19 @@ function AddProduct() {
     setCantVariant(cantVariant + 1);
     setVariants([...variants, {}]);
   };
+  const removeVariant = () => {
+    if (!cantVariant == 0) {
+      setCantVariant(cantVariant - 1);
+      const arrayVariant = variants;
+      arrayVariant.pop();
+      setVariants(arrayVariant);
+    }
+  };
   return (
     <main className="container  d-flex flex-column justify-content-center align-items-center p-5">
       <p className="fs-2">Añadir Nuevo producto</p>
       <form onSubmit={handleForm} className="bg-white p-5 w-100 gap-3">
-        <div className="w-100 d-flex gap-3">
+        <div className="w-100 d-flex flex-column gap-3 flex-xl-row">
           <div className="bg-white p-5 w-50 d-flex flex-column gap-3">
             <p className="fs-4">Descripción</p>
             <div>
@@ -118,7 +124,6 @@ function AddProduct() {
                 <option value="CAT003">Cacao y chocolates</option>
                 <option value="CAT004">infusiones</option>
               </select>
-
               <label className="invalid-feedback">
                 {validCategory ? "" : feedbackCategory}
               </label>
@@ -145,9 +150,17 @@ function AddProduct() {
               {variants.map((variant, index) => {
                 return <InputVariant key={index} num={index} />;
               })}
-              <button className="btn btn-secondary" onClick={addVariant}>
-                Añadir variantes
-              </button>
+              <div className="d-flex flex-row-reverse gap-3">
+                <button className="btn btn-secondary" onClick={addVariant}>
+                  Añadir variantes
+                </button>
+                <button
+                  className="btn btn-outline-secondary"
+                  onClick={removeVariant}
+                >
+                  Eliminar variantes
+                </button>
+              </div>
             </div>
           </div>
         </div>
