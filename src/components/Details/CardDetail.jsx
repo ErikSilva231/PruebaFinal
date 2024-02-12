@@ -1,17 +1,24 @@
 import "../../assets/css/CardDetail.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export const CardDetail = ({ id }) => {
-  const navigate = useNavigate();
+  const {
+    precio,
+    setPrecio,
+    producto,
+    getProducto,
+    cantidad,
+    setCantidad,
+    agregarProducto,
+    setSelectedOption,
+    selectedOption,
+    agregarFavoritos,
+  } = useContext(Context);
 
-  const { productos, producto, setProducto, carrito, setCarrito } =
-    useContext(Context);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [precio, setPrecio] = useState(0);
-  const [cantidad, setCantidad] = useState(1);
+  const navigate = useNavigate();
 
   const handleOptionClick = (opcion) => {
     setSelectedOption(opcion);
@@ -29,22 +36,6 @@ export const CardDetail = ({ id }) => {
     }
   };
 
-  const getProducto = (id) => {
-    setProducto(productos.find((objeto) => objeto.id == id));
-  };
-
-  const agregarProducto = (producto) => {
-    const productoSeleccionado = {
-      producto,
-      cantidad: cantidad,
-      opcion: selectedOption,
-      precio: precio,
-      precioTotal: precio * cantidad,
-    };
-    setCarrito([...carrito, productoSeleccionado]);
-    navigate(`/Cart`);
-  };
-
   const HandleChange = (e) => {
     const targetValue = e.target.value;
     setCantidad(targetValue);
@@ -59,7 +50,7 @@ export const CardDetail = ({ id }) => {
         <div className="row">
           <div className="col-md-5">
             <div className="main-img">
-              <img className="img-fluid" src={producto.img} alt="ProductS" />
+              <img className="img-fluid" src={producto.img} alt="Products" />
             </div>
           </div>
           <div className="col-md-7">
@@ -121,15 +112,23 @@ export const CardDetail = ({ id }) => {
 
               <div className="buttons d-flex my-5">
                 <div className="block">
-                  <a href="#" className="shadow btn custom-btn ">
+                  <a
+                    className="shadow btn custom-btn "
+                    onClick={() => {
+                      agregarFavoritos(producto);
+                      navigate("/favorites");
+                    }}
+                  >
                     Agregar a favoritos
                   </a>
                 </div>
                 <div className="block">
                   <a
-                    href="#"
                     className="shadow btn custom-btn "
-                    onClick={() => agregarProducto(producto)}
+                    onClick={() => {
+                      agregarProducto(producto);
+                      navigate("/cart");
+                    }}
                   >
                     Agregar al carrito
                   </a>

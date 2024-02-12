@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function SectionCategory() {
   return (
@@ -17,8 +16,11 @@ function SectionCategory() {
               type="button"
               href="#"
               className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-2"
-            > <Link className="nav-link" to="/productoDetail/${id}">BARRAS DE PROTEINAS</Link>
-              
+            >
+              {" "}
+              <Link className="nav-link" to="/products/BarradeProteinas">
+                BARRAS DE PROTEINAS
+              </Link>
             </h5>
           </div>
         </div>
@@ -35,7 +37,9 @@ function SectionCategory() {
               href="#"
               className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-4"
             >
-             <Link className="nav-link" to="/productoDetail/${id}">CACAO</Link>
+              <Link className="nav-link" to="/products/Cacao">
+                CACAO
+              </Link>
             </h5>
           </div>
         </div>
@@ -51,7 +55,9 @@ function SectionCategory() {
               href="#"
               className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-4"
             >
-              <Link className="nav-link" to="/productoDetail/${id}">FRUTOS SECOS</Link>
+              <Link className="nav-link" to="/products/FrutosSecos">
+                FRUTOS SECOS
+              </Link>
             </h5>
           </div>
         </div>
@@ -67,7 +73,9 @@ function SectionCategory() {
               href="#"
               className="position-absolute top-100 start-50 text-center translate-middle bg-secondary z-3 py-2 px-4"
             >
-              <Link className="nav-link" to="/productoDetail/${id}">INFUSIONES</Link>
+              <Link className="nav-link" to="/products/Infusiones">
+                INFUSIONES
+              </Link>
             </h5>
           </div>
         </div>

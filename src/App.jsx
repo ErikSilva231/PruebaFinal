@@ -7,7 +7,8 @@ import AddProduct from "./views/AddProduct";
 import ProductDetail from "./views/ProductDetail";
 import Products from "./views/Products";
 import Profile from "./views/Profile";
-import Cart from "./views/Cart";
+import Favorites from "./components/Profile/Favorites";
+//import Cart from "./views/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/Header/NavBar";
 import { Provider } from "./context/Context";
@@ -25,7 +26,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/productDetail/:id" element={<ProductDetail />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/products/:categoria" element={<Products />} />
+            <Route path="/products/" element={<Products />} />
+            <Route path="/favorites/" element={<Favorites />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/addProduct" element={<AddProduct />} />
             <Route path="/Cart" element={<Cart2 />} />
