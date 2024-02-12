@@ -13,23 +13,23 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/frutos-secos">
+              <Link className="nav-link" to="/products/FrutosSecos">
                 {" "}
                 Frutos Secos
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/barras">
-                Barras de cereales
+              <Link className="nav-link" to="/products/BarradeProteinas">
+                Barras de Proteinas
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/cacao">
+              <Link className="nav-link" to="/products/Cacao">
                 Cacao y chocolates
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/infusiones">
+              <Link className="nav-link" to="/products/Infusiones">
                 Infusiones
               </Link>
             </li>

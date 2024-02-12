@@ -25,8 +25,8 @@ export const Provider = ({ children }) => {
 
   const getProductos = async () => {
     try {
-      const response = await fetch("src/assets/json/productos.json");
-      const data = await response.json();
+      const response = await axios(url + "/products");
+      const data = response.data;
       setProductos(data);
     } catch (error) {
       console.log(error);
@@ -40,15 +40,30 @@ export const Provider = ({ children }) => {
       console.log(error);
     }
   };
-  const getProducto = (id) => {
-    setProducto(productos.find((objeto) => objeto.id == id));
+  const getProducto = async (id) => {
+    try {
+      const response = await axios.get(url + `products/${id}`);
+      setProducto(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const agregarFavoritos = (producto) => {
+  const getFavoritos = async () => {
+    try {
+      const response = await axios.get(url + "favorites");
+      setFavoritos(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const agregarFavoritos = async (producto) => {
     const yaesfavorito = favoritos.find((item) => item.id === producto.id);
 
     if (!yaesfavorito) {
-      setFavoritos([...favoritos, producto]);
+      await axios.post(url + "favorites", producto);
+      getFavoritos();
     }
   };
 
