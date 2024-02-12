@@ -6,9 +6,10 @@ function TopBar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <div className="d-flex">
-          <a className="navbar-brand d-block d-xl-none">
-            <img src="../../../public/logo-02.png" alt="..." width="75%" />
-          </a>
+          <p className="navbar-brand d-block d-xl-none">
+          <Link className="nav-link" to="/">
+          <img src="../../../public/logo-02.png" alt="..." width="75%" />
+          </Link>          </p>
           <button
             className="navbar-toggler"
             type="button"
