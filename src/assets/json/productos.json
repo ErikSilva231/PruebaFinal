@@ -6,7 +6,7 @@
         "img": "/public/almendras.jpg",
         "precio": 250.00,
         "stock": 50,
-        "categoria": "Frutos Secos"
+        "categoria": "FrutosSecos"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "img": "/almendras.jpg",
         "precio": 300.00,
         "stock": 30,
-        "categoria": "semillas"
+        "categoria": "FrutosSecos"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "img": "/almendras.jpg",
         "precio": 180.00,
         "stock": 60,
-        "categoria": "Frutos Secos"
+        "categoria": "Infusiones"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "img": "/almendras.jpg",
         "precio": 280.00,
         "stock": 40,
-        "categoria": "Trail Mix"
+        "categoria": "Cacao"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "img": "/almendras.jpg",
         "precio": 350.00,
         "stock": 25,
-        "categoria": "Granos"
+        "categoria": "BarradeProteinas"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "img": "/almendras.jpg",
         "precio": 210.00,
         "stock": 35,
-        "categoria": "Cereales"
+        "categoria": "Infusiones"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "img": "/almendras.jpg",
         "precio": 450.00,
         "stock": 20,
-        "categoria": "Harinas"
+        "categoria": "FrutosSecos"
     },
     {
         "id": 8,
@@ -69,6 +69,6 @@
         "img": "/almendras.jpg",
         "precio": 550.00,
         "stock": 15,
-        "categoria": "Polvos"
+        "categoria": "Cacao"
     }
 ]

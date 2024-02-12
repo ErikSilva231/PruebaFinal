@@ -1,9 +1,11 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../context/Context";
+import { Link } from "react-router-dom";
 import "../assets/css/carrito2.css";
 
 const Cart2 = () => {
-  const { carrito, total, setTotal } = useContext(Context);
+  const { carrito, aumentarItem, disminuirItem, total, setTotal } =
+    useContext(Context);
 
   const calcularTotal = () => {
     let parcial = 0;
@@ -24,13 +26,14 @@ const Cart2 = () => {
           <div className="col-xl-9 col-md-8">
             <h2 className="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">
               <span>Productos</span>
-              <a className="font-size-sm" href="/Products">
+              <Link className="font-size-sm" to="/products">
+                {" "}
                 Continuar comprando
-              </a>
+              </Link>
             </h2>
-            {carrito.map((producto, index) => (
+            {carrito.map((producto) => (
               <div
-                key={index}
+                key={producto.producto.id}
                 className="d-sm-flex justify-content-between my-4 pb-4 border-bottom"
               >
                 <div className="media d-block d-sm-flex text-left text-sm-left">
@@ -46,8 +49,20 @@ const Cart2 = () => {
                       {producto.producto.categoria}
                     </div>
                     <div className="font-size-sm">
-                      <span className="text-muted mr-2">Cantidad: </span>
-                      {producto.cantidad}
+                      <button
+                        className="btn btn-outline-success btn-sm btn-block mb-2"
+                        onClick={() => disminuirItem(producto)}
+                      >
+                        -
+                      </button>
+                      <span className="text-muted mr-2"> Cantidad: </span>
+                      {producto.cantidad}{" "}
+                      <button
+                        className="btn btn-outline-success btn-sm btn-block mb-2"
+                        onClick={() => aumentarItem(producto)}
+                      >
+                        +
+                      </button>
                     </div>
                     <div className="font-size-lg text-primary pt-2">
                       ${" "}
