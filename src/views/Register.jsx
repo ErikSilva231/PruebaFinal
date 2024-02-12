@@ -44,11 +44,11 @@ function Register() {
     setValidPhone(true);
     setValidPassword(true);
 
-    setFeedbackName(true);
-    setFeedbackSurname(true);
-    setFeedbackEmail(true);
-    setFeedbackPhone(true);
-    setFeedbackPassword(true);
+    setFeedbackName("");
+    setFeedbackSurname("");
+    setFeedbackEmail("");
+    setFeedbackPhone("");
+    setFeedbackPassword("");
 
     if (
       !user.email.trim() ||
