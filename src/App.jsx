@@ -14,6 +14,7 @@ import NavBar from "./components/Header/NavBar";
 import { Provider } from "./context/Context";
 import Cart2 from "./views/Cart2";
 import { UserContexProvider } from "./context/UserContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
               <Route path="/addProduct" element={<AddProduct />} />
               <Route path="/Cart" element={<Cart2 />} />
             </Routes>
+            
+      <Footer />
           </BrowserRouter>
         </Provider>
       </UserContexProvider>

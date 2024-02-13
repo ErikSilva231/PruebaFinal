@@ -1,5 +1,6 @@
 
 import SectionCategory from "../components/Category/SectionCategory";
+import CTA from "../components/Footer/CTA";
 import Slider from "../components/Header/Slider";
 import { SectionProduct } from "../components/Product/SectionProduct";
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
       <Slider />
       <SectionCategory />
       <SectionProduct />
+      <CTA />
     </>
   );
 }
