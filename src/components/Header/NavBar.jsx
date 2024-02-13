@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function NavBar() {
@@ -6,8 +6,8 @@ function NavBar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-white d-none d-xl-block">
       <div className="container">
         <p className="navbar-brand d-none d-xl-block">
-        <Link className="nav-link" to="/">
-          <img src="../../../public/logo-02.png" alt="..." width="75%" />
+          <Link className="nav-link" to="/">
+            <img src="../../../public/logo-02.png" alt="..." width="75%" />
           </Link>
         </p>
         <div className="collapse navbar-collapse" id="navbar">

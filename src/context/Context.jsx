@@ -25,8 +25,10 @@ export const Provider = ({ children }) => {
 
   const getProductos = async () => {
     try {
-      const response = await axios(url + "/products");
-      const data = response.data;
+      // const response = await axios(url + "/products");
+      // const data = response.data;
+      const response = await fetch("src/assets/json/productos.json");
+      const data = await response.json();
       setProductos(data);
     } catch (error) {
       console.log(error);
