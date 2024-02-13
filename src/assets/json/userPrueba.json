@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "nombre": "Usuario de Prueba",
+    "telefono": "222222222",
+    "rol": "Administrador",
+    "email": "usuario@prueba.cl",
+    "pedidos": "/usuarios/1/pedidos",
+    "favoritos": "/usuarios/1/favoritos",
+    "direcciones": "/usuarios/1/direcciones"
+}

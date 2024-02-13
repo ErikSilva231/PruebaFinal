@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserDataContex } from "../context/UserContext";
+import { ToastError } from "../components/Form/Toast";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -6,12 +8,18 @@ function Login() {
   const [validEmail, setValidEmail] = useState(true);
   const [feedbackPass, setFeedbackPass] = useState("");
   const [feedbackEmail, setFeedbackEmail] = useState("");
-
+  const [showToast, setShowToast] = useState(false);
+  const [toastConfig, setToastConfig] = useState({
+    title: "",
+    time: "",
+    message: "",
+  });
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
   const classInputPass = `form-control ${validPass ? "" : "is-invalid"}`;
   const classInputEmail = `form-control ${validEmail ? "" : "is-invalid"}`;
 
+  const { setUserLogin } = useContext(UserDataContex);
   const handleUser = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
@@ -19,7 +27,6 @@ function Login() {
     event.preventDefault();
     setValidEmail(true);
     setValidPass(true);
-
     if (!user.email.trim() || !user.password.trim()) {
       setValidEmail(false);
       setValidPass(false);
@@ -31,10 +38,23 @@ function Login() {
     if (!emailRegex.test(user.email)) {
       setValidEmail(false);
       setFeedbackEmail("El formato del email no es correcto");
+      return;
+    }
+    try {
+      setUserLogin(user);
+      setUser({ email: "", password: "" });
+    } catch (error) {
+      console.log(error);
+      setShowToast(true);
+      setToastConfig({
+        title: "Error",
+        time: "1 min",
+        message: "No se puede iniciar sesión en este momento intente mas tarde",
+      });
     }
   };
   return (
-    <main className="container  d-flex justify-content-center align-items-center p-5">
+    <main className="container  d-flex justify-content-center align-items-center p-5 ">
       <form
         onSubmit={handleForm}
         className="bg-white p-5 w-50 d-flex flex-column gap-3"
@@ -45,6 +65,7 @@ function Login() {
           <input
             type="email"
             name="email"
+            value={user.email}
             onChange={handleUser}
             className={classInputEmail}
             placeholder="Ingresa tu correo electrónico"
@@ -58,6 +79,7 @@ function Login() {
           <input
             type="password"
             name="password"
+            value={user.password}
             onChange={handleUser}
             className={classInputPass}
             placeholder="Ingresa tu contraseña"
@@ -74,6 +96,14 @@ function Login() {
           O <a href="/register">Registrate</a>
         </p>
       </form>
+      {showToast ? (
+        <ToastError
+          title={toastConfig.title}
+          time={toastConfig.time}
+          message={toastConfig.message}
+          Close={setShowToast}
+        />
+      ) : null}
     </main>
   );
 }

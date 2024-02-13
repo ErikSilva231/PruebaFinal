@@ -31,6 +31,7 @@ function AddProduct() {
     description: `form-control ${validDescription ? "" : "is-invalid"}`,
     category: `form-select ${validCategory ? "" : "is-invalid"}`,
     img: `form-control ${validImg ? "" : "is-invalid"}`,
+    variant: `form-control ${validVariant ? "" : "is-invalid"}`,
   };
 
   const handleProduct = (event) => {
@@ -41,6 +42,8 @@ function AddProduct() {
     const arrayVariants = variants;
     arrayVariants[index][key] = event.target.value;
     setVariants(arrayVariants);
+    setProduct({ ...product, variants: variants });
+    console.log(product);
   };
 
   const handleForm = (event) => {
@@ -73,6 +76,17 @@ function AddProduct() {
       setFeedbackImg("Todos los campos son obligatorias");
       return;
     }
+    variants.map((variant) => {
+      if (
+        !variant.variant.trim() ||
+        !variant.price.trim() ||
+        !variant.stock.trim()
+      ) {
+        setValidVariant(false);
+        setFeedbackVariant("Todos los campos son obligatorias");
+        return;
+      }
+    });
   };
   const addVariant = () => {
     setCantVariant(cantVariant + 1);
@@ -161,9 +175,21 @@ function AddProduct() {
                     key={index}
                     num={index}
                     handleChangeVariant={handleChangeVariant}
+                    classVariant={classInput.variant}
                   />
                 );
               })}
+              <label
+                className={
+                  validVariant
+                    ? "form-label fs-6 fw-light"
+                    : "invalid-feedback d-inline"
+                }
+              >
+                {validVariant
+                  ? "Agregar Variantes de productos"
+                  : feedbackVariant}
+              </label>
               <div className="d-flex flex-row-reverse gap-3">
                 <button className="btn btn-secondary" onClick={addVariant}>
                   Añadir variantes

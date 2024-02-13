@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export const InputVariant = ({ num, handleChangeVariant }) => {
+export const InputVariant = ({ num, handleChangeVariant, classVariant }) => {
   const HandleChange = (event) => {
     handleChangeVariant(event);
   };
@@ -9,21 +9,21 @@ export const InputVariant = ({ num, handleChangeVariant }) => {
       <input
         name={`variant-${num}`}
         type="text"
-        className={"form-control"}
+        className={classVariant}
         placeholder="Variante"
         onChange={HandleChange}
       />
       <input
         name={`price-${num}`}
         type="number"
-        className={"form-control"}
+        className={classVariant}
         placeholder="precio"
         onChange={HandleChange}
       />
       <input
         name={`stock-${num}`}
         type="number"
-        className={"form-control"}
+        className={classVariant}
         placeholder="Stock"
         onChange={HandleChange}
       />

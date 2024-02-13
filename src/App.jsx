@@ -13,28 +13,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/Header/NavBar";
 import { Provider } from "./context/Context";
 import Cart2 from "./views/Cart2";
+import { UserContexProvider } from "./context/UserContext";
 
 function App() {
   return (
     <>
-      <Provider>
-        <BrowserRouter>
-          <TopBar />
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/productDetail/:id" element={<ProductDetail />} />
-            <Route path="/products/:categoria" element={<Products />} />
-            <Route path="/products/" element={<Products />} />
-            <Route path="/favorites/" element={<Favorites />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/addProduct" element={<AddProduct />} />
-            <Route path="/Cart" element={<Cart2 />} />
-          </Routes>
-        </BrowserRouter>
-      </Provider>
+      <UserContexProvider>
+        <Provider>
+          <BrowserRouter>
+            <TopBar />
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/productDetail/:id" element={<ProductDetail />} />
+              <Route path="/products/:categoria" element={<Products />} />
+              <Route path="/products/" element={<Products />} />
+              <Route path="/favorites/" element={<Favorites />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/addProduct" element={<AddProduct />} />
+              <Route path="/Cart" element={<Cart2 />} />
+            </Routes>
+          </BrowserRouter>
+        </Provider>
+      </UserContexProvider>
     </>
   );
 }
