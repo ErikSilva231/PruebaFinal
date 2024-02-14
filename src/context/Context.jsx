@@ -44,8 +44,9 @@ export const Provider = ({ children }) => {
   };
   const getProducto = async (id) => {
     try {
-      const response = await axios.get(url + `products/${id}`);
-      setProducto(response.data);
+      setProducto(productos.find((objeto) => objeto.id == id));
+      /* const response = await axios.get(url + `products/${id}`);
+      setProducto(response.data); */
     } catch (error) {
       console.log(error);
     }
