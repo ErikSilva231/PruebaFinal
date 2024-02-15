@@ -62,3 +62,31 @@ p {
     background-color:#1DBC60 !important;
     color: #ffffff;
 }
+
+
+.btn-outline-primary {
+    background-color:#1DBC60;
+color: #ffffff;
+border-color: #009C41;
+}
+
+.btn-outline-primary:hover {
+    background-color:#009C41;
+    border-color: #1DBC60;
+}
+
+
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    background-color: #009C41;
+    border-color: #1DBC60
+} 
+
+
+.custom-btn {
+    background-color:#1DBC60 !important;
+}
+
+.custom-btn:hover {
+    background-color:#009C41 !important;
+}

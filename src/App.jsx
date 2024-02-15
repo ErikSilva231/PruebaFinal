@@ -7,6 +7,8 @@ import AddProduct from "./views/AddProduct";
 import ProductDetail from "./views/ProductDetail";
 import Products from "./views/Products";
 import Profile from "./views/Profile";
+import Nosotros from "./views/Nosotros";
+import Contacto from "./views/Contacto";
 import Favorites from "./components/Profile/Favorites";
 //import Cart from "./views/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,6 +17,7 @@ import { Provider } from "./context/Context";
 import Cart2 from "./views/Cart2";
 import { UserContexProvider } from "./context/UserContext";
 import Footer from "./components/Footer/Footer";
+
 
 function App() {
   return (
@@ -28,6 +31,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/contacto" element={<Contacto />} />
               <Route path="/productDetail/:id" element={<ProductDetail />} />
               <Route path="/products/:categoria" element={<Products />} />
               <Route path="/products/" element={<Products />} />
