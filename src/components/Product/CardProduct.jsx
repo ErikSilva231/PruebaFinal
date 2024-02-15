@@ -14,13 +14,13 @@ const CardProduct = ({ producto }) => {
     <div className="col-sm-12 col-md-6 col-xl-3 mt-5">
       <div className="card">
         <div>
-          <img src={producto.img} className="card-img-top" alt="..." />
+          <img src={producto.img_url} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title fw-bold">{producto.nombre}</h5>
+            <h5 className="card-title fw-bold">{producto.name}</h5>
             <h5 className="fw-bold">
-              <span className="fw-normal fs-6">Desde </span>${producto.precio}
+              <span className="fw-normal fs-6">Desde </span>${producto.price}
             </h5>
-            <p className="card-text fs-6">{producto.descripcion}</p>
+            <p className="card-text fs-6">{producto.description}</p>
           </div>
         </div>
 

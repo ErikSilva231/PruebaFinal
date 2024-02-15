@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const Context = createContext({});
-const url = "http://localhost:3000/";
+const url = "http://localhost:3000";
 
 // eslint-disable-next-line react/prop-types
 export const Provider = ({ children }) => {
@@ -16,19 +16,20 @@ export const Provider = ({ children }) => {
   const [favoritos, setFavoritos] = useState([]);
   const [producto, setProducto] = useState({
     id: "",
-    nombre: "",
-    img: "",
-    descripcion: "",
-    precio: 0,
-    categoria: "",
+    name: "",
+    img_url: "",
+    description: "",
+    price: 0,
+    stock: 0,
+    category: "",
   });
 
   const getProductos = async () => {
     try {
-      // const response = await axios(url + "/products");
-      // const data = response.data;
-      const response = await fetch("src/assets/json/productos.json");
-      const data = await response.json();
+      const response = await axios(url + "/products");
+      const data = response.data;
+      // const response = await fetch("src/assets/json/productos.json");
+      // const data = await response.json();
       setProductos(data);
     } catch (error) {
       console.log(error);
@@ -44,9 +45,9 @@ export const Provider = ({ children }) => {
   };
   const getProducto = async (id) => {
     try {
-      setProducto(productos.find((objeto) => objeto.id == id));
-      /* const response = await axios.get(url + `products/${id}`);
-      setProducto(response.data); */
+      // setProducto(productos.find((objeto) => objeto.id == id));
+      const response = await axios.get(url + `products/${id}`);
+      setProducto(response.data);
     } catch (error) {
       console.log(error);
     }

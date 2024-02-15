@@ -10,7 +10,7 @@ export const SectionProduct = ({ categoria }) => {
 
   if (categoria) {
     productosCategoria = productos.filter(
-      (producto) => producto.categoria == categoria
+      (producto) => producto.category == categoria
     );
   }
 
