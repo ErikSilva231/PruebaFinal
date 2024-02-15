@@ -12,7 +12,7 @@ const CardProduct = ({ producto }) => {
 
   return (
     <div className="col-sm-12 col-md-6 col-xl-3 mt-5">
-      <div className="card">
+      <div className="card card-product">
         <div>
           <img src={producto.img_url} className="card-img-top" alt="..." />
           <div className="card-body">
@@ -24,7 +24,9 @@ const CardProduct = ({ producto }) => {
           </div>
         </div>
 
-        <p
+       
+      </div>
+      <p
           type="button"
           href="#"
           className="container-fluid card-text text-center fw-bold bg-secondary py-4 "
@@ -32,7 +34,6 @@ const CardProduct = ({ producto }) => {
         >
           Elegir opciones
         </p>
-      </div>
     </div>
   );
 };
