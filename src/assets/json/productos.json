@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Almendras",
         "descripcion": "Almendras crudas, ricas en proteínas y ácidos grasos saludables.",
-        "img": "/public/almendras.jpg",
+        "img": "https://www.emporio4m.cl/cdn/shop/products/3AALMENDRAENTERA_360x360.jpg?v=1681138458",
         "precio": 250.00,
         "stock": 50,
         "categoria": "FrutosSecos"
