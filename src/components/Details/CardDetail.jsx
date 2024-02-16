@@ -1,15 +1,14 @@
 import "../../assets/css/CardDetail.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useProduct } from "../../hook/productHook";
 
 // eslint-disable-next-line react/prop-types
-export const CardDetail = ({ id }) => {
+export const CardDetail = () => {
   const {
     precio,
     setPrecio,
-    producto,
-    getProducto,
     cantidad,
     setCantidad,
     agregarProducto,
@@ -17,20 +16,22 @@ export const CardDetail = ({ id }) => {
     selectedOption,
     agregarFavoritos,
   } = useContext(Context);
-
+  const { id } = useParams();
+  const producto = useProduct(id);
+  console.log(producto);
   const navigate = useNavigate();
 
   const handleOptionClick = (opcion) => {
     setSelectedOption(opcion);
     switch (opcion) {
       case "100grs":
-        return setPrecio(producto.precio);
+        return setPrecio(producto.price);
       case "250grs":
-        return setPrecio(producto.precio * 2);
+        return setPrecio(producto.price * 2);
       case "500grs":
-        return setPrecio(producto.precio * 3);
+        return setPrecio(producto.price * 3);
       case "1000grs":
-        return setPrecio(producto.precio * 4);
+        return setPrecio(producto.price * 4);
       default:
         return setPrecio(250);
     }
@@ -41,25 +42,26 @@ export const CardDetail = ({ id }) => {
     setCantidad(targetValue);
   };
 
-  useEffect(() => {
-    getProducto(id);
-  });
   return (
     <>
       <div className="container my-5">
         <div className="row">
           <div className="col-md-5">
             <div className="main-img">
-              <img className="img-fluid" src={producto.img} alt="Products" />
+              <img
+                className="img-fluid"
+                src={producto.img_url}
+                alt="Products"
+              />
             </div>
           </div>
           <div className="col-md-7">
             <div className="main-description px-2">
               <div className="category text-bold">
-                Categoria: {producto.categoria}
+                Categoria: {producto.category}
               </div>
               <div className="product-title text-bold my-3">
-                {producto.nombre}
+                {producto.name}
               </div>
               <div
                 className="btn-group"
@@ -152,7 +154,7 @@ export const CardDetail = ({ id }) => {
               <p className="details-title text-color mb-1">
                 Detalles del producto
               </p>
-              <p className="description">{producto.descripcion}</p>
+              <p className="description">{producto.description}</p>
             </div>
 
             <div className="row questions bg-light p-3">
