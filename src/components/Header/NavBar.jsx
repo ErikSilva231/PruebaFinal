@@ -34,12 +34,6 @@ function NavBar() {
               </Link>
             </li>
           </ul>
-          <button type="button" className="btn btn-primary px-5 py-2">
-            {" "}
-            <Link className="nav-link" to="/addProduct">
-              Agregar producto
-            </Link>
-          </button>
           <span className="px-4 fs-1">
             {" "}
             <Link className="nav-link" to="/cart">

@@ -7,6 +7,7 @@ import AddProduct from "./views/AddProduct";
 import ProductDetail from "./views/ProductDetail";
 import Products from "./views/Products";
 import Profile from "./views/Profile";
+import ViewProfile from "./views/ViewProfile";
 import Nosotros from "./views/Nosotros";
 import Contacto from "./views/Contacto";
 import Favorites from "./components/Profile/Favorites";
@@ -37,6 +38,7 @@ function App() {
               <Route path="/products/:categoria" element={<Products />} />
               <Route path="/products/" element={<Products />} />
               <Route path="/favorites/" element={<Favorites />} />
+              <Route path="/viewprofile" element={<ViewProfile />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/addProduct" element={<AddProduct />} />
               <Route path="/Cart" element={<Cart2 />} />

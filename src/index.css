@@ -9,11 +9,11 @@ p {
 }
 
 .text-primary {
-    color:#1DBC60;
+    color:#1DBC60 !important;
 }
 
 .text-secondary {
-    color:#009C41;
+    color:#009C41 !important;
 }
 
 
@@ -94,3 +94,8 @@ border-color: #009C41;
 .card-product {
     min-height: 587px;
 }
+
+.bg-body-secondary:hover {
+    background: #e5e5e5 !important;
+}
+
