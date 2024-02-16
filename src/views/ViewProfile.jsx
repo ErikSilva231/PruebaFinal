@@ -50,6 +50,16 @@ function viewProfile() {
               <li className="nav-item" role="presentation">
                 <button className="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit-tab-pane" type="button" role="tab" aria-controls="edit-tab-pane" aria-selected="false"><span className="text-primary">Editar</span></button>
               </li>
+
+
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="address-tab" data-bs-toggle="tab" data-bs-target="#address-tab-pane" type="button" role="tab" aria-controls="address-tab-pane" aria-selected="false"><span className="text-primary">Direcciones</span></button>
+              </li>
+
+
+
+
+
               <li className="nav-item" role="presentation">
                 <button className="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password-tab-pane" type="button" role="tab" aria-controls="password-tab-pane" aria-selected="false"><span className="text-primary">Password</span></button>
               </li>
@@ -125,9 +135,54 @@ function viewProfile() {
                     <label for="inputEmail" className="form-label">Email</label>
                     <input type="email" className="form-control" id="inputEmail" placeholder="admin@oregano.cl" />
                   </div>
+                 
+                  
+                 
+                  <div className="col-12">
+                    <button type="submit" className="btn btn-primary">Guardar cambios</button>
+                  </div>
+                </form>
+              </div>
+
+              <div className="tab-pane fade" id="address-tab-pane" role="tabpanel" aria-labelledby="address-tab" tabindex="0">
+                <form action="#!" className="row gy-3 gy-xxl-4">
+                  <div className="col-12">
+                  
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <label for="inputFirstName" className="form-label">Nombre receptor</label>
+                    <input type="text" className="form-control" id="inputFirstName" placeholder="Nombre" />
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <label for="inputLastName" className="form-label">Apellido receptor</label>
+                    <input type="text" className="form-control" id="inputLastName" placeholder="Apellido" />
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <label for="inputTeléfono" className="form-label">Teléfono</label>
+                    <input type="tel" className="form-control" id="inputTeléfono" placeholder="+569 8827 8268" />
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <label for="inputEmail" className="form-label">Email</label>
+                    <input type="email" className="form-control" id="inputEmail" placeholder="admin@oregano.cl" />
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <label for="inputregion" className="form-label">Región</label>
+                    <input type="text" className="form-control" id="inputregion" placeholder="Region" />
+                  </div>
+
+                  <div className="col-12 col-md-6">
+                    <label for="inputcomuna" className="form-label">Comuna</label>
+                    <input type="text" className="form-control" id="inputcomuna" placeholder="Comuna" />
+                  </div>
+
                   <div className="col-12 col-md-6">
                     <label for="inputdirección" className="form-label">Dirección</label>
-                    <input type="text" className="form-control" id="inputdirección" placeholder="Direccion" />
+                    <input type="text" className="form-control" id="inputdireccion" placeholder="Dirección" />
+                  </div>
+
+                  <div className="col-12 col-md-6">
+                    <label for="inputdepto" className="form-label">depto. / of.</label>
+                    <input type="text" className="form-control" id="inputdepto" placeholder="Depto. / Of." />
                   </div>
                   
                  
@@ -136,6 +191,7 @@ function viewProfile() {
                   </div>
                 </form>
               </div>
+              
               <div className="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabindex="0">
                 <form action="#!">
                   <div className="row gy-3 gy-xxl-4">
