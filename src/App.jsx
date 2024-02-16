@@ -18,7 +18,6 @@ import Cart2 from "./views/Cart2";
 import { UserContexProvider } from "./context/UserContext";
 import Footer from "./components/Footer/Footer";
 
-
 function App() {
   return (
     <>
@@ -41,8 +40,8 @@ function App() {
               <Route path="/addProduct" element={<AddProduct />} />
               <Route path="/Cart" element={<Cart2 />} />
             </Routes>
-            
-      <Footer />
+
+            <Footer />
           </BrowserRouter>
         </Provider>
       </UserContexProvider>

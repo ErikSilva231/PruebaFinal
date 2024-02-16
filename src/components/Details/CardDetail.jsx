@@ -18,7 +18,6 @@ export const CardDetail = () => {
   } = useContext(Context);
   const { id } = useParams();
   const producto = useProduct(id);
-  console.log(producto);
   const navigate = useNavigate();
 
   const handleOptionClick = (opcion) => {

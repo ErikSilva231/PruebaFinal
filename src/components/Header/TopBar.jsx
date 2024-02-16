@@ -7,9 +7,10 @@ function TopBar() {
       <div className="container-fluid">
         <div className="d-flex">
           <p className="navbar-brand d-block d-xl-none">
-          <Link className="nav-link" to="/">
-          <img src="../../../public/logo-02.png" alt="..." width="75%" />
-          </Link>          </p>
+            <Link className="nav-link" to="/">
+              <img src="../../../public/logo-02.png" alt="..." width="75%" />
+            </Link>{" "}
+          </p>
           <button
             className="navbar-toggler"
             type="button"
@@ -35,16 +36,6 @@ function TopBar() {
             <li className="nav-item">
               <Link className="nav-link" to="/nosotros">
                 Nosotros
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">
-                Registrarse
               </Link>
             </li>
             <li className="nav-item">

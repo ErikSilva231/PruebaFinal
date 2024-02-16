@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { UserCard } from "./UserCard";
 
 function NavBar() {
   return (
@@ -40,6 +41,7 @@ function NavBar() {
               Agregar producto
             </Link>
           </button>
+          <UserCard />
           <span className="px-4 fs-1">
             {" "}
             <Link className="nav-link" to="/cart">
