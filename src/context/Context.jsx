@@ -14,15 +14,6 @@ export const Provider = ({ children }) => {
   const [cantidad, setCantidad] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
   const [favoritos, setFavoritos] = useState([]);
-  // const [producto, setProducto] = useState({
-  //   id: "",
-  //   name: "",
-  //   img_url: "",
-  //   description: "",
-  //   price: 0,
-  //   stock: 0,
-  //   category: "",
-  // });
 
   const getProductos = async () => {
     try {
@@ -41,16 +32,6 @@ export const Provider = ({ children }) => {
       console.log(error);
     }
   };
-  // const getProducto = async (id) => {
-  //   try {
-  //     // setProducto(productos.find((objeto) => objeto.id == id));
-  //     const response = await axios.get(url + `/products/${id}`);
-  //     setProducto(response.data);
-  //     console.log(producto);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const getFavoritos = async () => {
     try {
