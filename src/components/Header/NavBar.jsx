@@ -37,8 +37,9 @@ function NavBar() {
           </ul>
           <span className="px-4 fs-1">
             {" "}
-            <UserCard/>
-           
+            <Link className="nav-link" to="/cart">
+              🛒
+            </Link>
           </span>
         </div>
       </div>
