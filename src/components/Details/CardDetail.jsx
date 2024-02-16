@@ -1,11 +1,11 @@
 import "../../assets/css/CardDetail.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../hook/productHook";
 
 // eslint-disable-next-line react/prop-types
-export const CardDetail = () => {
+export const CardDetail = (id) => {
   const {
     precio,
     setPrecio,
@@ -16,7 +16,6 @@ export const CardDetail = () => {
     selectedOption,
     agregarFavoritos,
   } = useContext(Context);
-  const { id } = useParams();
   const producto = useProduct(id);
   const navigate = useNavigate();
 
