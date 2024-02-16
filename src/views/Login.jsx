@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
-import { UserDataContex } from "../context/UserContext";
 import { ToastError } from "../components/Form/Toast";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { UserDataContex } from "../context/UserContext";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -19,7 +21,9 @@ function Login() {
   const classInputPass = `form-control ${validPass ? "" : "is-invalid"}`;
   const classInputEmail = `form-control ${validEmail ? "" : "is-invalid"}`;
 
-  const { setUserLogin } = useContext(UserDataContex);
+  const { setToken } = useContext(UserDataContex);
+
+  const navigate = useNavigate();
   const handleUser = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
@@ -40,17 +44,39 @@ function Login() {
       setFeedbackEmail("El formato del email no es correcto");
       return;
     }
-    try {
-      setUserLogin(user);
-      setUser({ email: "", password: "" });
-    } catch (error) {
-      console.log(error);
-      setShowToast(true);
-      setToastConfig({
-        title: "Error",
-        time: "1 min",
-        message: "No se puede iniciar sesión en este momento intente mas tarde",
+
+    getToken(user)
+      .then((data) => {
+        if (data.token) {
+          window.sessionStorage.setItem("token", data.token);
+          setToken(data.token);
+          navigate("/");
+          setUser({ email: "", password: "" });
+        } else {
+          setShowToast(true);
+          setToastConfig({
+            title: data.message,
+            message: "Revise información",
+          });
+        }
+      })
+      .catch((data) => {
+        console.log(data);
+        setShowToast(true);
+        setToastConfig({
+          title: "Error",
+          message: "Error inesperado, intente mas tarde",
+        });
       });
+  };
+  const getToken = async (user) => {
+    const URLBASE = "http://localhost:3000";
+    try {
+      const response = await axios.post(URLBASE + "/login", user);
+      return await response.data;
+    } catch (error) {
+      console.log(error.response.data);
+      return error.response.data;
     }
   };
   return (

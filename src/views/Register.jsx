@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 function Register() {
@@ -8,6 +9,7 @@ function Register() {
     phone: "",
     password: "",
   });
+
   const [validName, setValidName] = useState(true);
   const [validSurname, setValidSurname] = useState(true);
   const [validEmail, setValidEmail] = useState(true);
@@ -30,7 +32,7 @@ function Register() {
 
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const phoneRegex = /^(?:(?:\+|00)56)?[1-9]\d{8}$/;
-  const passRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*_])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+  const passRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*_?])[a-zA-Z0-9!@#$%^&*_?]{8,}$/;
 
   const handleUser = (event) =>
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -84,14 +86,39 @@ function Register() {
       return;
     }
 
-    if (!passRegex.test(user.phone)) {
+    if (!passRegex.test(user.password)) {
       setValidPassword(false);
       setFeedbackPassword(
-        "Contraseña debe tener al menos 8 caracteres y debe contener mayusculas, minusculas y caracteres especiales @#$%^&*_"
+        "Contraseña debe tener al menos 8 caracteres y debe contener mayusculas, minusculas y caracteres especiales @#$%^&*_?"
       );
       return;
     }
-    //Logica para llamar a la api para registrarse
+
+    const userRegister = {
+      name: user.name + " " + user.surname,
+      email: user.email,
+      password: user.password,
+      phone: user.phone,
+      rol: "cliente",
+    };
+
+    createUser(userRegister);
+    setUser({
+      name: "",
+      surname: "",
+      email: "",
+      phone: "",
+      password: "",
+    });
+  };
+  const createUser = async (user) => {
+    const URLBASE = "http://localhost:3000";
+    try {
+      const response = await axios.post(URLBASE + `/user`, user);
+      return await response.data;
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <main className="container  d-flex justify-content-center align-items-center p-5">
