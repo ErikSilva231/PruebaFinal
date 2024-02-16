@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/profile.css";
 
 
-function Profile() {
+function ProfileClient() {
   
 
     return (
@@ -37,11 +37,19 @@ function Profile() {
                 </h2>
                 </a>
               </div>
-              <div className="col-6 col-md-4 col-xl-4 ">
-                <a href="/addProduct" className="text-dark text-decoration-none">
+              <div className="col-6 col-md-4 col-xl-2 ">
+                <a href="" className="text-dark text-decoration-none">
                 <h2 className="d-flex flex-column align-items-center justify-content-center bg-body-secondary rounded display-6 p-5">
-                  <i className=" bi bi-cart-plus mb-3"></i>
-                  <span className="fs-7 text-body-secondary text-center">Agregar producto</span>
+                  <i className=" bi bi-truck mb-3"></i>
+                  <span className="fs-7 text-body-secondary text-center">Direcciónes</span>
+                </h2>
+                </a>
+              </div>
+              <div className="col-6 col-md-4 col-xl-2 ">
+                <a href="./favorites" className="text-dark text-decoration-none">
+                <h2 className="d-flex flex-column align-items-center justify-content-center bg-body-secondary rounded display-6 p-5">
+                  <i className=" bi bi-heart mb-3"></i>
+                  <span className="fs-7 text-body-secondary text-center">Favoritos</span>
                 </h2>
                 </a>
               </div>
@@ -266,5 +274,5 @@ function Profile() {
     )
   }
   
-  export default Profile
+  export default ProfileClient
   
