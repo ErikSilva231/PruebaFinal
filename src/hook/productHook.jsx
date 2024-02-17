@@ -19,6 +19,7 @@ export const useProduct = (id) => {
 
 const getProducto = async (id) => {
   const URLBASE = "http://localhost:3000";
+  console.log(id);
   try {
     const response = await axios.get(URLBASE + `/products/${id}`);
     return await response.data;

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../hook/productHook";
 
 // eslint-disable-next-line react/prop-types
-export const CardDetail = (id) => {
+export const CardDetail = ({ id }) => {
   const {
     precio,
     setPrecio,

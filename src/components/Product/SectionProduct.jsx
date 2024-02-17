@@ -7,10 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export const SectionProduct = ({ categoria }) => {
   const { productos } = useContext(Context);
   let productosCategoria = productos;
-
   if (categoria) {
     productosCategoria = productos.filter(
-      (producto) => producto.category == categoria
+      (producto) => producto.category.toUpperCase() === categoria.toUpperCase()
     );
   }
 
