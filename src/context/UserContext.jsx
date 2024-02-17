@@ -10,7 +10,7 @@ export function UserContexProvider({ children }) {
     window.sessionStorage.getItem("token") ?? ""
   );
   const userData = useUser(token);
-  
+
   return (
     <UserDataContex.Provider value={{ userData, token, setToken }}>
       {children}

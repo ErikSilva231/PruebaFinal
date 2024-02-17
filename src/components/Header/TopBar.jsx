@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AvatarUnk from "./AvatarUnk";
-
+import AvatarClient from "./AvatarClient";
+import AvatarAdmin from "./AvatarAdmin";
+import { useContext } from "react";
+import { UserDataContex } from "../../context/UserContext";
 function TopBar() {
+  const { userData } = useContext(UserDataContex);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -57,8 +62,15 @@ function TopBar() {
               </Link>
             </button>
           </ul>
-<AvatarUnk/>
-
+          {userData ? (
+            userData.rol == "Administrador" ? (
+              <AvatarAdmin />
+            ) : (
+              <AvatarClient />
+            )
+          ) : (
+            <AvatarUnk />
+          )}
         </div>
       </div>
     </nav>
