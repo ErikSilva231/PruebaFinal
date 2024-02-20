@@ -11,6 +11,7 @@ import ProfileClient from "./views/ProfileClient";
 import ViewProfile from "./views/ViewProfile";
 import Nosotros from "./views/Nosotros";
 import Contacto from "./views/Contacto";
+import Forgot from "./views/forgot";
 import Favorites from "./components/Profile/Favorites";
 //import Cart from "./views/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -43,6 +44,7 @@ function App() {
               <Route path="/profileClient" element={<ProfileClient />} />
               <Route path="/addProduct" element={<AddProduct />} />
               <Route path="/Cart" element={<Cart2 />} />
+              <Route path="/Forgot" element={<Forgot />} />
             </Routes>
 
             <Footer />

@@ -139,7 +139,7 @@ function Login() {
             {validPass ? "" : feedbackPass}
           </label>
         </div>
-        <a className="text-end mt-2" href="">¿Olvidaste tu contraseña?</a>
+        <a className="text-end mt-2" href="-/Forgot">¿Olvidaste tu contraseña?</a>
 
         <button type="submit" className="btn btn-secondary">
           Ingresar
