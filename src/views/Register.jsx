@@ -121,15 +121,32 @@ function Register() {
     }
   };
   return (
-    <main className="container  d-flex justify-content-center align-items-center p-5">
+    <section className="bg-light py-3 py-md-5">
+  <div className="container">
+    <div className="row justify-content-md-center">
+      <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <h3 className="fs-1 text-secondary mb-2 text-uppercase text-center">Regístrate</h3>
+        <h2 className="display-5 mb-4 mb-md-5 text-center">Regístrate para tener una mejor experiencia de compra</h2>
+        <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
+      </div>
+    </div>
+  </div>
+
+    <div className="container">
+    <div className="row gy-3 gy-md-4 gy-lg-0 align-items-xl-center">
+      <div className="col-12 col-lg-6">
+        <img className="img-fluid rounded" loading="lazy" src="../../public/Mixes.webp" alt="" />
+      </div>
+      <div className="col-12 col-lg-6">
+        <div className="row justify-content-xl-center">
+          <div className="col-12 col-xl-11">
+            <div className="bg-white border rounded shadow-sm overflow-hidden">
       <form
         onSubmit={handleForm}
-        className="bg-white p-5 w-50 d-flex flex-column gap-3"
+        className="row gy-4 gy-xl-5 p-4 p-xl-5"
       >
-        <p className="fs-2">
-          !Bienvenido! Ingresa tus datos y disfruta una experiencia de compra
-        </p>
-        <div>
+       
+        <div className="mt-4">
           <label className="form-lebel">Nombre</label>
           <input
             type="text"
@@ -142,7 +159,7 @@ function Register() {
             {validName ? "" : feedbackName}
           </label>
         </div>
-        <div>
+        <div  className="mt-4">
           <label className="form-lebel">Apellidos</label>
           <input
             type="text"
@@ -155,7 +172,7 @@ function Register() {
             {validSurname ? "" : feedbackSurname}
           </label>
         </div>
-        <div>
+        <div className="mt-4">
           <label className="form-lebel">Correo Electrónico</label>
           <input
             type="email"
@@ -168,7 +185,7 @@ function Register() {
             {validEmail ? "" : feedbackEmail}
           </label>
         </div>
-        <div>
+        <div className="mt-4">
           <label className="form-lebel">Télefono</label>
           <input
             type="phone"
@@ -181,7 +198,7 @@ function Register() {
             {validPhone ? "" : feedbackPhone}
           </label>
         </div>
-        <div>
+        <div className="mt-4">
           <label className="form-lebel">Contraseña</label>
           <input
             type="password"
@@ -194,7 +211,7 @@ function Register() {
             {validPassword ? "" : feedbackPassword}
           </label>
         </div>
-        <div>
+        <div className="mt-4">
           <label className="form-lebel">Re-ingrese Contraseña</label>
           <input
             type="password"
@@ -210,8 +227,14 @@ function Register() {
           Registrar
         </button>
       </form>
-    </main>
-  );
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+);
 }
 
 export default Register;

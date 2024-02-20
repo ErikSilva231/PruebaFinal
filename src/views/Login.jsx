@@ -80,13 +80,38 @@ function Login() {
     }
   };
   return (
-    <main className="container  d-flex justify-content-center align-items-center p-5 ">
-      <form
+
+
+
+
+
+
+
+    <section className="bg-light py-3 py-md-5">
+  <div className="container">
+    <div className="row justify-content-md-center">
+      <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <h3 className="fs-1 text-secondary mb-2 text-uppercase text-center">Inicia sesión</h3>
+        <h2 className="display-5 mb-4 mb-md-5 text-center">Inicia sesión para hacer tu proceso de compra mas rápido</h2>
+        <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
+      </div>
+    </div>
+  </div>
+
+  <div className="container">
+    <div className="row gy-3 gy-md-4 gy-lg-0 align-items-xl-center">
+      <div className="col-12 col-lg-6">
+        <img className="img-fluid rounded" loading="lazy" src="../../public/Mixes.webp" alt="" />
+      </div>
+      <div className="col-12 col-lg-6">
+        <div className="row justify-content-xl-center">
+          <div className="col-12 col-xl-11">
+            <div className="bg-white border rounded shadow-sm overflow-hidden">
+            <form
         onSubmit={handleForm}
-        className="bg-white p-5 w-50 d-flex flex-column gap-3"
+        className="row gy-4 gy-xl-5 p-4 p-xl-5"
       >
-        <p className="fs-2">¡Hola! Inicia sesión para comprar</p>
-        <div>
+        <div className="mt-4">
           <label className="form-lebel">Correo Electrónico</label>
           <input
             type="email"
@@ -100,7 +125,7 @@ function Login() {
             {validEmail ? "" : feedbackEmail}
           </label>
         </div>
-        <div>
+        <div className="mt-4">
           <label className="form-lebel">Contraseña</label>
           <input
             type="password"
@@ -113,12 +138,13 @@ function Login() {
           <label className="invalid-feedback">
             {validPass ? "" : feedbackPass}
           </label>
-          <a href="">¿Olvidaste tu contraseña?</a>
         </div>
+        <a className="text-end mt-2" href="">¿Olvidaste tu contraseña?</a>
+
         <button type="submit" className="btn btn-secondary">
           Ingresar
         </button>
-        <p>
+        <p  className="text-end mt-2">
           O <a href="/register">Registrate</a>
         </p>
       </form>
@@ -130,7 +156,16 @@ function Login() {
           Close={setShowToast}
         />
       ) : null}
-    </main>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   );
 }
 
