@@ -19,7 +19,7 @@ export const useUser = (token) => {
 };
 
 const getUser = async (token) => {
-  const URLBASE = "http://localhost:3000";
+  const URLBASE = import.meta.env.VITE_APP_URL;
   try {
     const response = await axios.get(URLBASE + `/user`, {
       headers: { Authorization: `Bearer ${token}` },
