@@ -4,9 +4,9 @@ import AvatarUnk from "./AvatarUnk";
 import AvatarClient from "./AvatarClient";
 import AvatarAdmin from "./AvatarAdmin";
 import { useContext } from "react";
-import { UserDataContex } from "../../context/UserContext";
+import { UserDataContext } from "../../context/UserContext";
 function TopBar() {
-  const { userData } = useContext(UserDataContex);
+  const { userData } = useContext(UserDataContext);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
