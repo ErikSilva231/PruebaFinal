@@ -9,7 +9,7 @@ function Nosotros() {
   <div className="container">
     <div className="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
       <div className="col-12 col-lg-6">
-        <img className="img-fluid rounded" loading="lazy" src="../../public/Mixes.webp" alt="About 2" />
+        <img className="img-fluid rounded" loading="lazy" src="Mixes.webp" alt="About 2" />
       </div> 
       <div className="col-12 col-lg-6">
         <div className="row justify-content-xl-center">

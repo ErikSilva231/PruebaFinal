@@ -26,7 +26,7 @@ function viewProfile() {
               <div className="card-header bg-primary">Bienvenido, <strong> nombre</strong></div>
               <div className="card-body">
                 <div className="text-center mb-3">
-                  <img src="../../public/profile.jpg" className="img-fluid rounded-circle" alt="Luna John" />
+                  <img src="profile.jpg" className="img-fluid rounded-circle" alt="Luna John" />
                 </div>
                 <h5 className="text-center mb-1">Nombre</h5>
                 <p className="text-center text-secondary mb-4">Admin</p>
@@ -107,7 +107,7 @@ function viewProfile() {
                     <div className="row gy-2">
                       <label className="col-12 form-label m-0">Imagen de perfil</label>
                       <div className="col-12">
-                        <img src="../../public/profile.jpg" className="img-fluid" alt="profile" width="20%" />
+                        <img src="profile.jpg" className="img-fluid" alt="profile" width="20%" />
                       </div>
                       {/* <div className="col-12">
                         <a href="#!" className="d-inline-block bg-primary link-light lh-1 p-2 rounded">

@@ -34,7 +34,7 @@ function AvatarAdmin() {
               aria-expanded="false"
             >
               <img
-                src="../../public/profile.jpg"
+                src="profile.jpg"
                 width="35"
                 height="35"
                 className="img-fluid rounded-circle"

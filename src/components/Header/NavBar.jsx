@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { UserCard } from "./UserCard";
 
 function NavBar() {
   return (
@@ -8,7 +7,7 @@ function NavBar() {
       <div className="container">
         <p className="navbar-brand d-none d-xl-block">
           <Link className="nav-link" to="/">
-            <img src="../../../dist/logo-02.png" alt="..." width="75%" />
+            <img src="logo-02.png" alt="..." width="75%" />
           </Link>
         </p>
         <div className="collapse navbar-collapse" id="navbar">

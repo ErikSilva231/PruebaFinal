@@ -12,7 +12,7 @@ function AvatarClient() {
                 
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle bsb-dropdown-toggle-caret-disable" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../../public/profile.jpg" width="35" height="35" className="img-fluid rounded-circle" alt="profile" />
+                    <img src="profile.jpg" width="35" height="35" className="img-fluid rounded-circle" alt="profile" />
                   </a>
                   <ul className="dropdown-menu dropdown-menu-md-end bsb-dropdown-animation bsb-fadeIn">
                     <li>
