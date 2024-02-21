@@ -14,7 +14,7 @@ function TopBar() {
         <div className="d-flex">
           <p className="navbar-brand d-block d-xl-none">
             <Link className="nav-link" to="/">
-              <img src="../../../public/logo-02.png" alt="..." width="75%" />
+              <img src="../../../dist/logo-02.png" alt="..." width="75%" />
             </Link>{" "}
           </p>
           <button

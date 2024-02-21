@@ -8,7 +8,7 @@ function NavBar() {
       <div className="container">
         <p className="navbar-brand d-none d-xl-block">
           <Link className="nav-link" to="/">
-            <img src="../../../public/logo-02.png" alt="..." width="75%" />
+            <img src="../../../dist/logo-02.png" alt="..." width="75%" />
           </Link>
         </p>
         <div className="collapse navbar-collapse" id="navbar">
