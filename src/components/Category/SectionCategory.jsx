@@ -10,7 +10,8 @@ function SectionCategory() {
           return (
             <div key={cat.id} className="col-sm-12 col-md-6 col-xl-3 mt-5">
               <div className="card">
-                <img src="../../../dist/Cacao_500x200.png"
+                <img
+                  src={cat.src}
                   className="card-img-top"
                   alt={`Imagen de ${cat.name}`}
                 />
