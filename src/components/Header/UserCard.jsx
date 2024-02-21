@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserDataContex } from "../../context/UserContext";
+import { UserDataContext } from "../../context/UserContext";
 
 export const UserCard = () => {
-  const { userData } = useContext(UserDataContex);
+  const { userData } = useContext(UserDataContext);
   const path = userData ? "/profile" : "/login";
   const name = userData ? userData.name : "Inicia Sesión";
   return (

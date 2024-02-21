@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext } from "react";
-import { UserDataContex } from "../../context/UserContext";
+import { UserDataContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 function AvatarAdmin() {
-  const { userData, setToken } = useContext(UserDataContex);
+  const { userData, setToken } = useContext(UserDataContext);
   const navigate = useNavigate();
   const handleClickLogOut = () => {
     window.sessionStorage.removeItem("token");
