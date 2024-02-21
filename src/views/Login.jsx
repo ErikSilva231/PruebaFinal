@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { ToastError } from "../components/Form/Toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { UserDataContex } from "../context/UserContext";
+import { UserDataContext } from "../context/UserContext";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -21,7 +21,7 @@ function Login() {
   const classInputPass = `form-control ${validPass ? "" : "is-invalid"}`;
   const classInputEmail = `form-control ${validEmail ? "" : "is-invalid"}`;
 
-  const { setToken } = useContext(UserDataContex);
+  const { setToken } = useContext(UserDataContext);
 
   const navigate = useNavigate();
   const handleUser = (event) => {
