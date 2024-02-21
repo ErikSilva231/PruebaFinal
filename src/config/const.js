@@ -8,28 +8,24 @@ export const ENDPOINT = {
 export const category = [{
     id: 1,
     name: "BARRA DE PROTEINAS",
-    src: "BARRA_500x200.png",
     endpoint: "",
     path: "/products/BarradeProteinas"
 },
 {
     id: 2,
     name: "CACAO",
-    src: "Cacao_500x200.png",
     endpoint: "FRUTOS_SECOS_500x200.png",
     path: "/products/Cacao"
 },
 {
     id: 3,
     name: "FRUTOS SECOS",
-    src: "FRUTOS_SECOS_500x200.png",
     endpoint: "",
     path: "/products/FrutosSecos"
 },
 {
     id: 4,
     name: "INFUSIONES",
-    src: "te_500x200.png",
     endpoint: "",
     path: "/products/Infusiones"
 }]
