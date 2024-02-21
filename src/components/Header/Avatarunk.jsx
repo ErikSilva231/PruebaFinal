@@ -20,7 +20,7 @@ function AvatarUnk() {
                   </a>
                   <ul className="dropdown-menu dropdown-menu-md-end bsb-dropdown-animation bsb-fadeIn">
                     <li>
-                      <h6 className="dropdown-header fs-7 text-center">bienvenido, <strong>Desconocido</strong></h6>
+                      <h6 className="dropdown-header fs-7 text-center">Bienvenido, <strong>Desconocido</strong></h6>
                     </li>
                    
                    
@@ -31,7 +31,7 @@ function AvatarUnk() {
                       <a className="dropdown-item" href="/register">
                         <span>
                           <i className="bi  bi bi-person-add me-2"></i>
-                          <span className="fs-7">Registrate</span>
+                          <span className="fs-7">Regístrate</span>
                         </span>
                       </a>
                     </li>

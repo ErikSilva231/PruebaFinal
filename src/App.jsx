@@ -20,10 +20,9 @@ import { Provider } from "./context/Context";
 import Cart2 from "./views/Cart2";
 import { UserContextProvider } from "./context/UserContext";
 import Footer from "./components/Footer/Footer";
-const { REACT_APP_URL } = import.meta.env;
+const { VITE_APP_URL } = import.meta.env;
 
 function App() {
-  console.log(import.meta.env)
   return (
     <>
       <UserContextProvider>
