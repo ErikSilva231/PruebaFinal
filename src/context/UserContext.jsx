@@ -3,17 +3,17 @@
 //import ENDPOINT from "../config/const.jsx";
 import { createContext, useState } from "react";
 import { useUser } from "../hook/userHook";
-export const UserDataContex = createContext({});
+export const UserDataContext = createContext({});
 
-export function UserContexProvider({ children }) {
+export function UserContextProvider({ children }) {
   const [token, setToken] = useState(
     window.sessionStorage.getItem("token") ?? ""
   );
   const userData = useUser(token);
 
   return (
-    <UserDataContex.Provider value={{ userData, token, setToken }}>
+    <UserDataContext.Provider value={{ userData, token, setToken }}>
       {children}
-    </UserDataContex.Provider>
+    </UserDataContext.Provider>
   );
 }
