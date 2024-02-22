@@ -16,7 +16,7 @@ export const category = [{
     id: 2,
     name: "CACAO",
     src: "Cacao_500x200.png",
-    endpoint: "FRUTOS_SECOS_500x200.png",
+    endpoint: "",
     path: "/products/Cacao"
 },
 {
