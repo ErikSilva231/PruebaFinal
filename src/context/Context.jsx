@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const Context = createContext({});
-const url = "http://localhost:3000";
+const url = "https://trabajofinalbackend.onrender.com/";
 
 // eslint-disable-next-line react/prop-types
 export const Provider = ({ children }) => {

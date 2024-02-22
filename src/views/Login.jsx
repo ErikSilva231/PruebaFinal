@@ -70,7 +70,7 @@ function Login() {
       });
   };
   const getToken = async (user) => {
-    const URLBASE = "http://localhost:3000";
+    const URLBASE = "https://trabajofinalbackend.onrender.com/";
     try {
       const response = await axios.post(URLBASE + "/login", user);
       return await response.data;
