@@ -1,8 +1,11 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+const {VITE_APP_URL } = import.meta.env; 
+
 
 export const Context = createContext({});
-const url = "https://trabajofinalbackend.onrender.com";
+const url = VITE_APP_URL;
+
 
 // eslint-disable-next-line react/prop-types
 export const Provider = ({ children }) => {
