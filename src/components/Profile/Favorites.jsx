@@ -11,7 +11,7 @@ const Favorites = () => {
           <div className="col-xl-9 col-md-8">
             <h2 className="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">
               <span>Favoritos</span>
-              <Link className="font-size-sm" to="/products">
+              <Link className="font-size-sm text-white" to="/products">
                 {" "}
                 Volver a productos
               </Link>
