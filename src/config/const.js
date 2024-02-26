@@ -1,9 +1,4 @@
-export const URLBASE = 'https://trabajofinalbackend.onrender.com/'
-
-export const ENDPOINT = {
-    login: `${URLBASE}/login`,
-    users: `${URLBASE}/usuarios`
-}
+export const URLBASE = import.meta.env.VITE_APP_URL
 
 export const category = [{
     id: 1,
