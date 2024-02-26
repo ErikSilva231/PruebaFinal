@@ -8,7 +8,7 @@ function SectionCategory() {
       <div className="row">
         {category.map((cat) => {
           return (
-            <div key={cat.id} className="col-sm-12 col-md-6 col-xl-3 mt-5">
+            <div key={cat.id} className="col-sm-6 col-md-6 col-xl-3 mt-5">
               <div className="card">
                 <img
                   src={cat.src}

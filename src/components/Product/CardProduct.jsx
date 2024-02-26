@@ -11,7 +11,7 @@ const CardProduct = ({ producto }) => {
   };
 
   return (
-    <div className="col-sm-12 col-md-6 col-xl-3 mt-5">
+    <div className="col-sm-6 col-md-6 col-xl-3 mt-5">
       <div className="card card-product">
         <div>
           <img src={producto.img_url} className="card-img-top" alt="..." />
