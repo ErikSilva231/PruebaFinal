@@ -73,6 +73,7 @@ function Login() {
   };
   const getToken = async (user) => {
     try {
+      console.log(URLBASE);
       const response = await axios.post(URLBASE + "/login", user);
       return await response.data;
     } catch (error) {
