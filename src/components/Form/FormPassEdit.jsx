@@ -3,6 +3,7 @@ import { URLBASE } from "../../config/const";
 import axios from "axios";
 import UserDataContext from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { ToastError } from "./Toast";
 
 export const FormPassEdit = () => {
   const { token } = useContext(UserDataContext);
@@ -25,7 +26,11 @@ export const FormPassEdit = () => {
     setPassword({ ...password, [event.target.name]: event.target.value });
     console.log({ [event.target.name]: event.target.value });
   };
-
+  const [toastConfig, setToastConfig] = useState({
+    title: "",
+    message: "",
+  });
+  const [showToast, setShowToast] = useState(false);
   const handleForm = (event) => {
     event.preventDefault();
     setValidPassword(true);
@@ -52,60 +57,74 @@ export const FormPassEdit = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       const response = await instanceModify.put(`/user`, user);
+      setToastConfig({
+        title: "ok",
+        message: "Contraseña modificada",
+      });
       return await response.data;
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <form onSubmit={handleForm}>
-      <div className="row gy-3 gy-xxl-4">
-        <div className="col-12">
-          <label htmlFor="currentPassword" className="form-label">
-            Password reciente
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            onChange={handlePass}
-          />
-        </div>
-        <div className="col-12">
-          <label htmlFor="newPassword" className="form-label">
-            Nuevo Password
-          </label>
-          <input
-            type="password"
-            className={classInput.password}
-            name="newPassword"
-            onChange={handlePass}
-          />
-          <label className="invalid-feedback">
-            {validPassword ? "" : feedbackPassword}
-          </label>
-        </div>
-        <div className="col-12">
-          <label htmlFor="confirmPassword" className="form-label">
-            Confirmar Password
-          </label>
-          <input
-            type="password"
-            className={classInput.password}
-            name="confirmPass"
-            onChange={handlePass}
-          />
-          <label className="invalid-feedback">
-            {validPassword ? "" : feedbackPassword}
-          </label>
-        </div>
+    <>
+      <form onSubmit={handleForm}>
+        <div className="row gy-3 gy-xxl-4">
+          <div className="col-12">
+            <label htmlFor="currentPassword" className="form-label">
+              Password reciente
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              onChange={handlePass}
+            />
+          </div>
+          <div className="col-12">
+            <label htmlFor="newPassword" className="form-label">
+              Nuevo Password
+            </label>
+            <input
+              type="password"
+              className={classInput.password}
+              name="newPassword"
+              onChange={handlePass}
+            />
+            <label className="invalid-feedback">
+              {validPassword ? "" : feedbackPassword}
+            </label>
+          </div>
+          <div className="col-12">
+            <label htmlFor="confirmPassword" className="form-label">
+              Confirmar Password
+            </label>
+            <input
+              type="password"
+              className={classInput.password}
+              name="confirmPass"
+              onChange={handlePass}
+            />
+            <label className="invalid-feedback">
+              {validPassword ? "" : feedbackPassword}
+            </label>
+          </div>
 
-        <div className="col-12">
-          <button type="submit" className="btn btn-primary">
-            Cambiar Password
-          </button>
+          <div className="col-12">
+            <button type="submit" className="btn btn-primary">
+              Cambiar Password
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+      {showToast ? (
+        <ToastError
+          title={toastConfig.title}
+          time={toastConfig.time}
+          message={toastConfig.message}
+          Close={setShowToast}
+        />
+      ) : null}
+    </>
   );
 };
