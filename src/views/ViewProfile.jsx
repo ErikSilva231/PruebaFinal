@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext } from "react";
 import UserDataContext from "../context/UserContext";
 import { FormProfileEdit } from "../components/Form/FormProfileEdit";
+import { FormProfile } from "../components/Form/FormProfile";
 
 function ViewProfile() {
   const { userData } = useContext(UserDataContext);
@@ -114,34 +115,7 @@ function ViewProfile() {
                     aria-labelledby="profile-tab"
                     tabIndex="0"
                   >
-                    <h5 className="mb-3">Perfil</h5>
-                    <div className="row g-0">
-                      <div className="col-5 col-md-3 bg-light border-bottom border-white border-3">
-                        <div className="p-2">Nombre</div>
-                      </div>
-                      <div className="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
-                        <div className="p-2">{userData.name}</div>
-                      </div>
-
-                      <div className="col-5 col-md-3 bg-light border-bottom border-white border-3">
-                        <div className="p-2">Dirección</div>
-                      </div>
-                      <div className="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
-                        <div className="p-2">av siempre viva #123</div>
-                      </div>
-                      <div className="col-5 col-md-3 bg-light border-bottom border-white border-3">
-                        <div className="p-2">Teléfono</div>
-                      </div>
-                      <div className="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
-                        <div className="p-2">{userData.phone}</div>
-                      </div>
-                      <div className="col-5 col-md-3 bg-light border-bottom border-white border-3">
-                        <div className="p-2">Email</div>
-                      </div>
-                      <div className="col-7 col-md-9 bg-light border-start border-bottom border-white border-3">
-                        <div className="p-2">{userData.email}</div>
-                      </div>
-                    </div>
+                    <FormProfile />
                   </div>
                   <div
                     className="tab-pane fade"
@@ -151,77 +125,6 @@ function ViewProfile() {
                     tabIndex="0"
                   >
                     <FormProfileEdit />
-                    {/*<form action="#!" className="row gy-3 gy-xxl-4">
-                      <div className="col-12">
-                        <div className="row gy-2">
-                          <label className="col-12 form-label m-0">
-                            Imagen de perfil
-                          </label>
-                          <div className="col-12">
-                            <img
-                              src="profile.jpg"
-                              className="img-fluid"
-                              alt="profile"
-                              width="20%"
-                            />
-                          </div>
-                           <div className="col-12">
-                        <a href="#!" className="d-inline-block bg-primary link-light lh-1 p-2 rounded">
-                          <i className="bi bi-upload"></i>
-                        </a>
-                        <a href="#!" className="d-inline-block bg-danger link-light lh-1 p-2 rounded">
-                          <i className="bi bi-trash"></i>
-                        </a>
-                      </div>
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <label htmlFor="inputFirstName" className="form-label">
-                          Nombre
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          className="form-control"
-                          placeholder="Nombre"
-                          value={userData.name}
-                          onChange={handleUser}
-                        />
-                      </div>
-
-                      <div className="col-12 col-md-6">
-                        <label htmlFor="inputTeléfono" className="form-label">
-                          Teléfono
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          className="form-control"
-                          placeholder="569 XXXX XXXX"
-                          value={userData.phone}
-                          onChange={handleUser}
-                        />
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <label htmlFor="inputEmail" className="form-label">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          className="form-control"
-                          placeholder="email@email.com"
-                          value={userData.email}
-                          onChange={handleUser}
-                        />
-                      </div>
-
-                      <div className="col-12">
-                        <button type="submit" className="btn btn-primary">
-                          Guardar cambios
-                        </button>
-                      </div>
-                    </form> */}
                   </div>
 
                   <div
