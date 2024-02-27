@@ -1,8 +1,10 @@
 import "../../assets/css/CardDetail.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { ToastError } from "../Form/Toast";
 import Context from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../hook/productHook";
+import UserDataContext from "../../context/UserContext";
 
 // eslint-disable-next-line react/prop-types
 export const CardDetail = ({ id }) => {
@@ -16,8 +18,10 @@ export const CardDetail = ({ id }) => {
     selectedOption,
     agregarFavoritos,
   } = useContext(Context);
+  const { userData } = useContext(UserDataContext);
   const producto = useProduct(id);
   const navigate = useNavigate();
+  const [showToast, setShowToast] = useState(false);
 
   const handleOptionClick = (opcion) => {
     setSelectedOption(opcion);
@@ -32,6 +36,24 @@ export const CardDetail = ({ id }) => {
         return setPrecio(producto.price * 4);
       default:
         return setPrecio(250);
+    }
+  };
+
+  const HandleAddFavorite = (producto) => {
+    if (userData) {
+      agregarFavoritos(producto);
+      navigate("/favorites");
+    } else {
+      setShowToast(true);
+    }
+  };
+
+  const HandleAddCarrito = (producto) => {
+    if (userData) {
+      agregarProductoCarrito(producto);
+      navigate("/cart");
+    } else {
+      setShowToast(true);
     }
   };
 
@@ -115,8 +137,7 @@ export const CardDetail = ({ id }) => {
                   <a
                     className="shadow btn custom-btn "
                     onClick={() => {
-                      agregarFavoritos(producto);
-                      navigate("/favorites");
+                      HandleAddFavorite(producto);
                     }}
                   >
                     Agregar a favoritos
@@ -126,8 +147,7 @@ export const CardDetail = ({ id }) => {
                   <a
                     className="shadow btn custom-btn "
                     onClick={() => {
-                      agregarProductoCarrito(producto);
-                      navigate("/cart");
+                      HandleAddCarrito(producto);
                     }}
                   >
                     Agregar al carrito
@@ -154,7 +174,14 @@ export const CardDetail = ({ id }) => {
               </p>
               <p className="description">{producto.description}</p>
             </div>
-
+            {showToast ? (
+              <ToastError
+                title="Mensaje de advertencia"
+                time=""
+                message="Debe INICIAR SESION para agregar elementos"
+                Close={setShowToast}
+              />
+            ) : null}
             <div className="row questions bg-light p-3">
               <div className="col-md-1 icon">
                 <i className="fa-brands fa-rocketchat questions-icon"></i>

@@ -1,14 +1,14 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import axios from "axios";
 const { VITE_APP_URL } = import.meta.env;
-import userDataContext from "../context/UserContext";
+import UserDataContext from "../context/UserContext";
 
 const Context = createContext({});
 const url = VITE_APP_URL;
 
 // eslint-disable-next-line react/prop-types
 export function Provider({ children }) {
-  const { userData } = useContext(userDataContext);
+  const { userData } = useContext(UserDataContext);
   const [productos, setProductos] = useState([]);
   const [carrito, setCarrito] = useState([]);
   const [ide, setIde] = useState("");
