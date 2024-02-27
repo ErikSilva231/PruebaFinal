@@ -113,7 +113,6 @@ function Register() {
     });
   };
   const createUser = async (user) => {
-    //const URLBASE = "https://trabajofinalbackend.onrender.com/";
     try {
       const response = await axios.post(URLBASE + `/user`, user);
       return await response.data;
