@@ -1,6 +1,6 @@
 import "../../assets/css/CardDetail.css";
 import { useContext } from "react";
-import { Context } from "../../context/Context";
+import Context from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../hook/productHook";
 
@@ -11,7 +11,7 @@ export const CardDetail = ({ id }) => {
     setPrecio,
     cantidad,
     setCantidad,
-    agregarProducto,
+    agregarProductoCarrito,
     setSelectedOption,
     selectedOption,
     agregarFavoritos,
@@ -126,7 +126,7 @@ export const CardDetail = ({ id }) => {
                   <a
                     className="shadow btn custom-btn "
                     onClick={() => {
-                      agregarProducto(producto);
+                      agregarProductoCarrito(producto);
                       navigate("/cart");
                     }}
                   >

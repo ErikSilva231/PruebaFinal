@@ -1,9 +1,14 @@
-import { useContext } from "react";
-import { Context } from "../../context/Context";
+import { useContext, useEffect } from "react";
+import Context from "../../context/Context";
 import { Link } from "react-router-dom";
 
 const Favorites = () => {
-  const { favoritos, eliminarFavorito } = useContext(Context);
+  const { favoritos, eliminarFavorito, getFavoritos } = useContext(Context);
+
+  useEffect(() => {
+    getFavoritos();
+  }, []);
+
   return (
     <>
       <div className="container pb-5 mt-n2 mt-md-n3">
@@ -32,12 +37,12 @@ const Favorites = () => {
                         to={`/ProductDetail/${producto.id}`}
                       >
                         {" "}
-                        {producto.nombre}
+                        {producto.name}
                       </Link>
                     </h3>
                     <div className="font-size-sm">
                       <span className="text-muted mr-2">Categoria: </span>
-                      {producto.categoria}
+                      {producto.category}
                     </div>
                   </div>
                 </div>

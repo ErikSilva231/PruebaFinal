@@ -1,11 +1,20 @@
 import { useContext, useEffect } from "react";
-import { Context } from "../context/Context";
+import Context from "../context/Context";
 import { Link } from "react-router-dom";
 import "../assets/css/carrito2.css";
+import UserDataContext from "../context/UserContext";
 
 const Cart2 = () => {
-  const { carrito, aumentarItem, disminuirItem, total, setTotal } =
-    useContext(Context);
+  const {
+    carrito,
+    aumentarItem,
+    disminuirItem,
+    total,
+    setTotal,
+    getCarrito,
+    eliminarProductoCarrito,
+  } = useContext(Context);
+  const { userData } = useContext(UserDataContext);
 
   const calcularTotal = () => {
     let parcial = 0;
@@ -17,7 +26,12 @@ const Cart2 = () => {
 
   useEffect(() => {
     calcularTotal();
-  });
+
+    if (userData) {
+      getCarrito(userData.id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -33,20 +47,26 @@ const Cart2 = () => {
             </h2>
             {carrito.map((producto) => (
               <div
-                key={producto.producto.id}
+                key={producto.id}
                 className="d-sm-flex justify-content-between my-4 pb-4 border-bottom"
               >
                 <div className="media d-block d-sm-flex text-left text-sm-left">
                   <div className="cart-item-thumb mx-auto mr-sm-4 m-2" href="#">
-                    <img src={producto.producto.img} alt="Product" />
+                    <img src={producto.img} alt="Product" />
                   </div>
                   <div className="media-body pt-3">
                     <h3 className="product-card-title font-weight-semibold border-0 pb-0">
-                      <a href="#">{producto.producto.nombre}</a>
+                      <Link
+                        className="font-size-sm"
+                        to={`/ProductDetail/${producto.product_id}`}
+                      >
+                        {" "}
+                        {producto.name}
+                      </Link>
                     </h3>
                     <div className="font-size-sm">
                       <span className="text-muted mr-2">Categoria: </span>
-                      {producto.producto.categoria}
+                      {producto.category}
                     </div>
                     <div className="font-size-sm">
                       <button
@@ -64,9 +84,13 @@ const Cart2 = () => {
                         +
                       </button>
                     </div>
+                    <div className="font-size-sm">
+                      <span className="text-muted mr-2">Opción: </span>
+                      {producto.opcion}
+                    </div>
                     <div className="font-size-lg text-primary pt-2">
                       ${" "}
-                      {producto.precioTotal
+                      {(producto.precio * producto.cantidad)
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                     </div>
@@ -78,6 +102,7 @@ const Cart2 = () => {
                   <button
                     className="btn btn-outline-danger btn-sm btn-block mb-2"
                     type="button"
+                    onClick={() => eliminarProductoCarrito(producto.id)}
                   >
                     Eliminar
                   </button>

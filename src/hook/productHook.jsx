@@ -18,8 +18,8 @@ export const useProduct = (id) => {
 };
 
 const getProducto = async (id) => {
-  const URLBASE =  import.meta.env.VITE_APP_URL;
-  console.log(id);
+  const URLBASE = import.meta.env.VITE_APP_URL;
+
   try {
     const response = await axios.get(URLBASE + `/products/${id}`);
     return await response.data;

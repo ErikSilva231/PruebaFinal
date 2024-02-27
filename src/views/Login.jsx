@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import { ToastError } from "../components/Form/Toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { UserDataContext } from "../context/UserContext";
-import { URLBASE } from "../config/const";
+import UserDataContext from "../context/UserContext";
+const { VITE_APP_URL } = import.meta.env;
 
 function Login() {
+  const URLBASE = VITE_APP_URL;
   const [user, setUser] = useState({ email: "", password: "" });
   const [validPass, setValidPass] = useState(true);
   const [validEmail, setValidEmail] = useState(true);

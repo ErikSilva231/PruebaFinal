@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
-import { UserDataContext } from "../../context/UserContext";
+import UserDataContext from "../../context/UserContext";
 import { useContext } from "react";
 
 function AvatarClient() {

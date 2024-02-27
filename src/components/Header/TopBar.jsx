@@ -4,7 +4,7 @@ import AvatarUnk from "./AvatarUnk";
 import AvatarClient from "./AvatarClient";
 import AvatarAdmin from "./AvatarAdmin";
 import { useContext } from "react";
-import { UserDataContext } from "../../context/UserContext";
+import UserDataContext from "../../context/UserContext";
 function TopBar() {
   const { userData } = useContext(UserDataContext);
 
@@ -55,12 +55,7 @@ function TopBar() {
                 Ver carrito🛒
               </Link>
             </span>
-            <button type="button" className="btn btn-primary d-block d-xl-none">
-              {" "}
-              <Link className="nav-link text-white" to="/addProduct">
-                Agregar producto
-              </Link>
-            </button>
+          
           </ul>
           {userData ? (
             userData.rol == "Administrador" ? (
