@@ -6,14 +6,11 @@ export const ToastError = ({ title, message, Close }) => {
     Close(false);
   };
   return (
-    <Toast
-      onClose={handleClose}
-      className="position-fixed text-bg-warning bottom-0 end-0 "
-    >
-      <Toast.Header className="">
+    <Toast onClose={handleClose} className="position-fixed top-0 end-0 ">
+      <Toast.Header className="text-primary-emphasis">
         <strong>{title}</strong>
       </Toast.Header>
-      <Toast.Body> {message}</Toast.Body>
+      <Toast.Body className="bg-body-tertiary"> {message}</Toast.Body>
     </Toast>
   );
 };
