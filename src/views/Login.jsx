@@ -49,7 +49,6 @@ function Login() {
 
     getToken(user)
       .then((data) => {
-        console.log(data);
         if (data.token) {
           window.sessionStorage.setItem("token", data.token);
           setToken(data.token);
@@ -74,7 +73,6 @@ function Login() {
   };
   const getToken = async (user) => {
     try {
-      console.log(URLBASE);
       const response = await axios.post(URLBASE + "/login", user);
       return await response.data;
     } catch (error) {

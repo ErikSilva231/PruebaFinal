@@ -3,6 +3,7 @@ import { useContext } from "react";
 import UserDataContext from "../context/UserContext";
 import { FormProfileEdit } from "../components/Form/FormProfileEdit";
 import { FormProfile } from "../components/Form/FormProfile";
+import { FormPassEdit } from "../components/Form/FormPassEdit";
 
 function ViewProfile() {
   const { userData } = useContext(UserDataContext);
@@ -243,51 +244,7 @@ function ViewProfile() {
                     aria-labelledby="password-tab"
                     tabIndex="0"
                   >
-                    <form action="#!">
-                      <div className="row gy-3 gy-xxl-4">
-                        <div className="col-12">
-                          <label
-                            htmlFor="currentPassword"
-                            className="form-label"
-                          >
-                            Password reciente
-                          </label>
-                          <input
-                            type="password"
-                            className="form-control"
-                            id="currentPassword"
-                          />
-                        </div>
-                        <div className="col-12">
-                          <label htmlFor="newPassword" className="form-label">
-                            Nuevo Password
-                          </label>
-                          <input
-                            type="password"
-                            className="form-control"
-                            id="newPassword"
-                          />
-                        </div>
-                        <div className="col-12">
-                          <label
-                            htmlFor="confirmPassword"
-                            className="form-label"
-                          >
-                            Confirmar Password
-                          </label>
-                          <input
-                            type="password"
-                            className="form-control"
-                            id="confirmPassword"
-                          />
-                        </div>
-                        <div className="col-12">
-                          <button type="submit" className="btn btn-primary">
-                            Cambiar Password
-                          </button>
-                        </div>
-                      </div>
-                    </form>
+                    <FormPassEdit />
                   </div>
                 </div>
               </div>
