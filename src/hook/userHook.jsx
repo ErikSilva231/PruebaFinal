@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -25,7 +26,5 @@ const getUser = async (token) => {
       headers: { Authorization: `Bearer ${token}` },
     });
     return await response.data;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch {}
 };
