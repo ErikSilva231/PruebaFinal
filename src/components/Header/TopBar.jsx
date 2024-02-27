@@ -4,7 +4,7 @@ import AvatarUnk from "./AvatarUnk";
 import AvatarClient from "./AvatarClient";
 import AvatarAdmin from "./AvatarAdmin";
 import { useContext } from "react";
-import { UserDataContext } from "../../context/UserContext";
+import UserDataContext from "../../context/UserContext";
 function TopBar() {
   const { userData } = useContext(UserDataContext);
 

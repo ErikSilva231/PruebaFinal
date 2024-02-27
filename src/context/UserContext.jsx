@@ -3,7 +3,7 @@
 //import ENDPOINT from "../config/const.jsx";
 import { createContext, useState } from "react";
 import { useUser } from "../hook/userHook";
-export const UserDataContext = createContext({});
+const UserDataContext = createContext({});
 
 export function UserContextProvider({ children }) {
   const [token, setToken] = useState(
@@ -17,3 +17,5 @@ export function UserContextProvider({ children }) {
     </UserDataContext.Provider>
   );
 }
+
+export default UserDataContext;

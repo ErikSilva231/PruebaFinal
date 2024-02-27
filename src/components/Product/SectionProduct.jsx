@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
-import { Context } from "../../context/Context";
+import Context from "../../context/Context";
 import CardProduct from "./CardProduct";
 import "bootstrap/dist/css/bootstrap.min.css";
 
