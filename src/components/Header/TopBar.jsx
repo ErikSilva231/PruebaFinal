@@ -56,7 +56,7 @@ function TopBar() {
               </Link>
             </span>
           
-          
+          </ul>
           {userData ? (
             userData.rol == "Administrador" ? (
               <AvatarAdmin />
@@ -66,7 +66,6 @@ function TopBar() {
           ) : (
             <AvatarUnk />
           )}
-          </ul>
         </div>
       </div>
     </nav>
