@@ -1,49 +1,38 @@
 import { useState } from "react";
-import { InputVariant } from "../components/Form/inputVariant";
+import { URLBASE } from "../config/const";
+import axios from "axios";
 
 function AddProduct() {
   const [product, setProduct] = useState({
     name: "",
     description: "",
-    category: "",
-    img: "",
-    variants: [{ variant: "", price: 0, stock: 0 }],
+    category_id: "",
+    img_url: "",
+    price: 0,
+    stock: 0,
   });
-  const [cantVariant, setCantVariant] = useState(0);
-  const [variants, setVariants] = useState([
-    { variant: "", price: 0, stock: 0 },
-  ]);
-
   const [validName, setValidName] = useState(true);
   const [validDescription, setValidDescription] = useState(true);
   const [validCategory, setValidCategory] = useState(true);
   const [validImg, setValidImg] = useState(true);
-  const [validVariant, setValidVariant] = useState(true);
+  const [validPrice, setValidPrice] = useState(true);
 
   const [feedbackName, setFeedbackName] = useState("");
   const [feedbackDescription, setFeedbackDescription] = useState("");
   const [feedbackCategory, setFeedbackCategory] = useState("");
   const [feedbackImg, setFeedbackImg] = useState("");
-  const [feedbackVariant, setFeedbackVariant] = useState("");
+  const [feedbackPrice, setFeedbackPrice] = useState("");
 
   const classInput = {
     name: `form-control ${validName ? "" : "is-invalid"}`,
     description: `form-control ${validDescription ? "" : "is-invalid"}`,
     category: `form-select ${validCategory ? "" : "is-invalid"}`,
     img: `form-control ${validImg ? "" : "is-invalid"}`,
-    variant: `form-control ${validVariant ? "" : "is-invalid"}`,
+    price: `form-control ${validPrice ? "" : "is-invalid"}`,
   };
 
   const handleProduct = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
-  };
-  const handleChangeVariant = (event) => {
-    const [key, index] = event.target.name.split("-");
-    const arrayVariants = variants;
-    arrayVariants[index][key] = event.target.value;
-    setVariants(arrayVariants);
-    setProduct({ ...product, variants: variants });
-    console.log(product);
   };
 
   const handleForm = (event) => {
@@ -63,41 +52,38 @@ function AddProduct() {
       !product.name.trim() ||
       !product.description.trim() ||
       !product.category.trim() ||
-      !product.img.trim()
+      !product.img.trim() ||
+      !product.price.trim()
     ) {
       setValidName(false);
       setValidDescription(false);
       setValidCategory(false);
       setValidImg(false);
+      setValidPrice(false);
 
       setFeedbackName("Todos los campos son obligatorias");
       setFeedbackDescription("Todos los campos son obligatorias");
       setFeedbackCategory("Todos los campos son obligatorias");
       setFeedbackImg("Todos los campos son obligatorias");
+      setFeedbackPrice("Todos los campos son obligatorias");
       return;
     }
-    variants.map((variant) => {
-      if (
-        !variant.variant.trim() ||
-        !variant.price.trim() ||
-        !variant.stock.trim()
-      ) {
-        setValidVariant(false);
-        setFeedbackVariant("Todos los campos son obligatorias");
-        return;
-      }
+    createProduct(product);
+    setProduct({
+      name: "",
+      description: "",
+      category_id: "",
+      img_url: "",
+      price: 0,
+      stock: 0,
     });
   };
-  const addVariant = () => {
-    setCantVariant(cantVariant + 1);
-    setVariants([...variants, { variant: "", price: 0, stock: 0 }]);
-  };
-  const removeVariant = () => {
-    if (!cantVariant == 0) {
-      setCantVariant(cantVariant - 1);
-      const arrayVariant = variants;
-      arrayVariant.pop();
-      setVariants(arrayVariant);
+  const createProduct = async (product) => {
+    try {
+      const response = await axios.post(URLBASE + `/user`, product);
+      return await response.data;
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
@@ -141,10 +127,10 @@ function AddProduct() {
                 className={classInput.category}
               >
                 <option defaultValue>Seleccione una categoría</option>
-                <option value="CAT001">Frutos Secos</option>
-                <option value="CAT002">Barras de Cereal</option>
-                <option value="CAT003">Cacao y chocolates</option>
-                <option value="CAT004">infusiones</option>
+                <option value="1">Frutos Secos</option>
+                <option value="2">Barras de Cereal</option>
+                <option value="3">Cacao</option>
+                <option value="4">infusiones</option>
               </select>
               <label className="invalid-feedback">
                 {validCategory ? "" : feedbackCategory}
@@ -156,51 +142,27 @@ function AddProduct() {
             <div>
               <label className="form-lebel">Imagen del producto</label>
               <input
-                type="file"
+                type="text"
                 name="img"
-                accept="image/*"
                 onChange={handleProduct}
                 className={classInput.img}
-                placeholder="Ingresa el nombre del producto"
+                placeholder="Ingresa link con imagen del producto"
               />
               <label className="invalid-feedback">
                 {validImg ? "" : feedbackImg}
               </label>
             </div>
             <div className="d-flex flex-column gap-1">
-              <label className="form-lebel">Variantes</label>
-              {variants.map((variant, index) => {
-                return (
-                  <InputVariant
-                    key={index}
-                    num={index}
-                    handleChangeVariant={handleChangeVariant}
-                    classVariant={classInput.variant}
-                  />
-                );
-              })}
-              <label
-                className={
-                  validVariant
-                    ? "form-label fs-6 fw-light"
-                    : "invalid-feedback d-inline"
-                }
-              >
-                {validVariant
-                  ? "Agregar Variantes de productos"
-                  : feedbackVariant}
+              <label className="form-lebel">Precio Unitario</label>
+              <input
+                type="number"
+                className={classInput.price}
+                onChange={handleProduct}
+                min="1"
+              />
+              <label className="invalid-feedback">
+                {validPrice ? "" : feedbackPrice}
               </label>
-              <div className="d-flex flex-row-reverse gap-3">
-                <button className="btn btn-secondary" onClick={addVariant}>
-                  Añadir variantes
-                </button>
-                <button
-                  className="btn btn-outline-secondary"
-                  onClick={removeVariant}
-                >
-                  Eliminar variantes
-                </button>
-              </div>
             </div>
           </div>
         </div>
