@@ -44,7 +44,7 @@ function AvatarAdmin() {
             <ul className="dropdown-menu dropdown-menu-md-end bsb-dropdown-animation bsb-fadeIn">
               <li>
                 <h6 className="dropdown-header fs-7 text-center">
-                  bienvenido, <strong>{userData.name}</strong>
+                  Bienvenido, <strong>{userData.name}</strong>
                 </h6>
               </li>
 
@@ -89,7 +89,6 @@ function AvatarAdmin() {
                   </span>
                 </Link>
               </li>
-
               <li>
                 <hr className="dropdown-divider" />
               </li>

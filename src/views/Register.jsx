@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { URLBASE } from "../config/const";
 
 function Register() {
   const [user, setUser] = useState({
@@ -99,7 +100,7 @@ function Register() {
       email: user.email,
       password: user.password,
       phone: user.phone,
-      rol: "cliente",
+      rol: "client",
     };
 
     createUser(userRegister);
@@ -112,7 +113,7 @@ function Register() {
     });
   };
   const createUser = async (user) => {
-    const URLBASE = "https://trabajofinalbackend.onrender.com/";
+    //const URLBASE = "https://trabajofinalbackend.onrender.com/";
     try {
       const response = await axios.post(URLBASE + `/user`, user);
       return await response.data;
@@ -122,119 +123,129 @@ function Register() {
   };
   return (
     <section className="bg-light py-3 py-md-5">
-  <div className="container">
-    <div className="row justify-content-md-center">
-      <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-        <h3 className="fs-1 text-secondary mb-2 text-uppercase text-center">Regístrate</h3>
-        <h2 className="display-5 mb-4 mb-md-5 text-center">Regístrate para tener una mejor experiencia de compra</h2>
-        <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
-      </div>
-    </div>
-  </div>
-
-    <div className="container">
-    <div className="row gy-3 gy-md-4 gy-lg-0 align-items-xl-center">
-      <div className="col-12 col-lg-6">
-        <img className="img-fluid rounded" loading="lazy" src="Mixes.webp" alt="" />
-      </div>
-      <div className="col-12 col-lg-6">
-        <div className="row justify-content-xl-center">
-          <div className="col-12 col-xl-11">
-            <div className="bg-white border rounded shadow-sm overflow-hidden">
-      <form
-        onSubmit={handleForm}
-        className="row gy-4 gy-xl-5 p-4 p-xl-5"
-      >
-       
-        <div className="mt-4">
-          <label className="form-lebel">Nombre</label>
-          <input
-            type="text"
-            name="name"
-            onChange={handleUser}
-            className={classInput.name}
-            placeholder="Ingresa tu nombre"
-          />
-          <label className="invalid-feedback">
-            {validName ? "" : feedbackName}
-          </label>
-        </div>
-        <div  className="mt-4">
-          <label className="form-lebel">Apellidos</label>
-          <input
-            type="text"
-            name="surname"
-            onChange={handleUser}
-            className={classInput.surname}
-            placeholder="Ingresa tus Apellidos"
-          />
-          <label className="invalid-feedback">
-            {validSurname ? "" : feedbackSurname}
-          </label>
-        </div>
-        <div className="mt-4">
-          <label className="form-lebel">Correo Electrónico</label>
-          <input
-            type="email"
-            name="email"
-            onChange={handleUser}
-            className={classInput.email}
-            placeholder="Ingresa tu correo electrónico"
-          />
-          <label className="invalid-feedback">
-            {validEmail ? "" : feedbackEmail}
-          </label>
-        </div>
-        <div className="mt-4">
-          <label className="form-lebel">Télefono</label>
-          <input
-            type="phone"
-            name="phone"
-            onChange={handleUser}
-            className={classInput.phone}
-            placeholder="Ingresa tu correo electrónico"
-          />
-          <label className="invalid-feedback">
-            {validPhone ? "" : feedbackPhone}
-          </label>
-        </div>
-        <div className="mt-4">
-          <label className="form-lebel">Contraseña</label>
-          <input
-            type="password"
-            name="password"
-            onChange={handleUser}
-            className={classInput.password}
-            placeholder="Ingresa tu contraseña"
-          />
-          <label className="invalid-feedback">
-            {validPassword ? "" : feedbackPassword}
-          </label>
-        </div>
-        <div className="mt-4">
-          <label className="form-lebel">Re-ingrese Contraseña</label>
-          <input
-            type="password"
-            name="confirmación"
-            className={classInput.password}
-            placeholder="Re-Ingresa tu contraseña"
-          />
-          <label className="invalid-feedback">
-            {validPassword ? "" : feedbackPassword}
-          </label>
-        </div>
-        <button type="submit" className="btn btn-secondary">
-          Registrar
-        </button>
-      </form>
-      </div>
+      <div className="container">
+        <div className="row justify-content-md-center">
+          <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+            <h3 className="fs-1 text-secondary mb-2 text-uppercase text-center">
+              Regístrate
+            </h3>
+            <h2 className="display-5 mb-4 mb-md-5 text-center">
+              Regístrate para tener una mejor experiencia de compra
+            </h2>
+            <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>  
-);
+
+      <div className="container">
+        <div className="row gy-3 gy-md-4 gy-lg-0 align-items-xl-center">
+          <div className="col-12 col-lg-6">
+            <img
+              className="img-fluid rounded"
+              loading="lazy"
+              src="Mixes.webp"
+              alt=""
+            />
+          </div>
+          <div className="col-12 col-lg-6">
+            <div className="row justify-content-xl-center">
+              <div className="col-12 col-xl-11">
+                <div className="bg-white border rounded shadow-sm overflow-hidden">
+                  <form
+                    onSubmit={handleForm}
+                    className="row gy-4 gy-xl-5 p-4 p-xl-5"
+                  >
+                    <div className="mt-4">
+                      <label className="form-lebel">Nombre</label>
+                      <input
+                        type="text"
+                        name="name"
+                        onChange={handleUser}
+                        className={classInput.name}
+                        placeholder="Ingresa tu nombre"
+                      />
+                      <label className="invalid-feedback">
+                        {validName ? "" : feedbackName}
+                      </label>
+                    </div>
+                    <div className="mt-4">
+                      <label className="form-lebel">Apellidos</label>
+                      <input
+                        type="text"
+                        name="surname"
+                        onChange={handleUser}
+                        className={classInput.surname}
+                        placeholder="Ingresa tus Apellidos"
+                      />
+                      <label className="invalid-feedback">
+                        {validSurname ? "" : feedbackSurname}
+                      </label>
+                    </div>
+                    <div className="mt-4">
+                      <label className="form-lebel">Correo Electrónico</label>
+                      <input
+                        type="email"
+                        name="email"
+                        onChange={handleUser}
+                        className={classInput.email}
+                        placeholder="Ingresa tu correo electrónico"
+                      />
+                      <label className="invalid-feedback">
+                        {validEmail ? "" : feedbackEmail}
+                      </label>
+                    </div>
+                    <div className="mt-4">
+                      <label className="form-lebel">Télefono</label>
+                      <input
+                        type="phone"
+                        name="phone"
+                        onChange={handleUser}
+                        className={classInput.phone}
+                        placeholder="Ingresa tu correo electrónico"
+                      />
+                      <label className="invalid-feedback">
+                        {validPhone ? "" : feedbackPhone}
+                      </label>
+                    </div>
+                    <div className="mt-4">
+                      <label className="form-lebel">Contraseña</label>
+                      <input
+                        type="password"
+                        name="password"
+                        onChange={handleUser}
+                        className={classInput.password}
+                        placeholder="Ingresa tu contraseña"
+                      />
+                      <label className="invalid-feedback">
+                        {validPassword ? "" : feedbackPassword}
+                      </label>
+                    </div>
+                    <div className="mt-4">
+                      <label className="form-lebel">
+                        Re-ingrese Contraseña
+                      </label>
+                      <input
+                        type="password"
+                        name="confirmación"
+                        className={classInput.password}
+                        placeholder="Re-Ingresa tu contraseña"
+                      />
+                      <label className="invalid-feedback">
+                        {validPassword ? "" : feedbackPassword}
+                      </label>
+                    </div>
+                    <button type="submit" className="btn btn-secondary">
+                      Registrar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Register;
