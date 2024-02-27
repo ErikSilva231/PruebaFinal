@@ -40,7 +40,7 @@ const Cart2 = () => {
           <div className="col-xl-9 col-md-8">
             <h2 className="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">
               <span>Productos</span>
-              <Link className="font-size-sm" to="/products">
+              <Link className="font-size-sm text-white" to="/products">
                 {" "}
                 Continuar comprando
               </Link>

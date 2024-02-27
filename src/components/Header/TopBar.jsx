@@ -55,12 +55,7 @@ function TopBar() {
                 Ver carrito🛒
               </Link>
             </span>
-            <button type="button" className="btn btn-primary d-block d-xl-none">
-              {" "}
-              <Link className="nav-link text-white" to="/addProduct">
-                Agregar producto
-              </Link>
-            </button>
+          
           </ul>
           {userData ? (
             userData.rol == "Administrador" ? (

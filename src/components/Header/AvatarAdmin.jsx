@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext } from "react";
 import UserDataContext from "../../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AvatarAdmin() {
   const { userData, setToken } = useContext(UserDataContext);
@@ -52,42 +52,42 @@ function AvatarAdmin() {
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <a className="dropdown-item" href="/profile">
+                <Link className="dropdown-item" to="/profile">
                   <span>
                     <i className="bi  bi bi-person-fill me-2"></i>
                     <span className="fs-7">Ver perfil</span>
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item" href="/viewprofile">
+                <Link className="dropdown-item" to="/viewprofile">
                   <span>
                     <i className="bi  bi bi-gear-fill me-2"></i>
                     <span className="fs-7">Editar perfil</span>
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <a className="dropdown-item" href="/addProduct">
+                <Link className="dropdown-item" to="/addProduct">
                   <span>
                     <i className=" bi bi-cart-plus-fill mb-3 me-2"></i>
                     <span className="fs-7">Agregar producto</span>
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <a className="dropdown-item" href="/viewprofile">
+                <Link className="dropdown-item" to="/viewprofile">
                   <span>
                     <i className="bi  bi bi-lock-fill me-2"></i>
                     <span className="fs-7">Password</span>
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
