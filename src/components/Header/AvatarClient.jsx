@@ -52,7 +52,7 @@ function AvatarClient() {
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <Link className="dropdown-item" to="/profile">
+                <Link className="dropdown-item" to="/profileClient">
                   <span>
                     <i className="bi  bi bi-person-fill me-2"></i>
                     <span className="fs-7">Ver perfil</span>
