@@ -143,7 +143,7 @@ function Login() {
                         {validPass ? "" : feedbackPass}
                       </label>
                     </div>
-                    <Link className="text-end mt-2" to="./Forgot">
+                    <Link className="text-end mt-2" to="/Forgot">
                       ¿Olvidaste tu contraseña?
                     </Link>
 
