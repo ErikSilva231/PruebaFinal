@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { ToastError } from "../components/Form/Toast";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} } from "react-router-dom";
+
 import UserDataContext from "../context/UserContext";
 const { VITE_APP_URL } = import.meta.env;
 
@@ -142,15 +143,15 @@ function Login() {
                         {validPass ? "" : feedbackPass}
                       </label>
                     </div>
-                    <a className="text-end mt-2" href="./Forgot">
+                    <Link className="text-end mt-2" to="./Forgot">
                       ¿Olvidaste tu contraseña?
-                    </a>
+                    </Link>
 
                     <button type="submit" className="btn btn-secondary">
                       Ingresar
                     </button>
                     <p className="text-end mt-2">
-                      O <a href="/register">Registrate</a>
+                      O <Link to="/register">Registrate</Link>
                     </p>
                   </form>
                   {showToast ? (
