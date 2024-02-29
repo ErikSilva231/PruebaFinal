@@ -28,10 +28,13 @@ const Cart2 = () => {
     if (userData) {
       getCarrito(userData.id);
     }
-    calcularTotal();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [carrito]);
+  }, []);
+
+  useEffect(() => {
+    calcularTotal();
+  }, [calcularTotal]);
 
   return (
     <>
