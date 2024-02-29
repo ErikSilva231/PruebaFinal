@@ -195,15 +195,7 @@ export const CardDetail = ({ id }) => {
                 <b>Entrega dentro de 3 dias desde realizada la compra</b>{" "}
               </p>
             </div>
-            <div className="delivery-options my-4">
-              <p className="font-weight-bold mb-0">
-                <span>
-                  <i className="fa-solid fa-filter"></i>
-                </span>{" "}
-                <b>Opciones de entrega</b>{" "}
-              </p>
-              <p className="text-secondary">View delivery options here</p>
-            </div>
+          
           </div>
         </div>
       </div>
