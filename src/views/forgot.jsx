@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/profile.css";
+import { Link } from "react-router-dom";
+
 
 function Forgot() {
   
@@ -51,7 +53,7 @@ function Forgot() {
           Ingresar
         </button>
         <p  className="text-end mt-2">
-          O <a href="/register">Registrate</a>
+          O <Link to="/register">Registrate</Link>
         </p>
       </form>
      

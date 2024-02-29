@@ -74,7 +74,7 @@ function ProfileClient() {
       
       </div>
       
-      <aside className="bsb-sidebar-1 offcanvas offcanvas-start" tabindex="-1" id="bsbSidebar1" aria-labelledby="bsbSidebarLabel1">
+      <aside className="bsb-sidebar-1 offcanvas offcanvas-start" tabIndex="-1" id="bsbSidebar1" aria-labelledby="bsbSidebarLabel1">
         <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="bsbSidebarLabel1">Offcanvas Sidebar</h5>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
