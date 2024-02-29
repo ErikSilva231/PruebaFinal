@@ -60,7 +60,7 @@ function AvatarClient() {
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" a="/viewprofile">
+                <Link className="dropdown-item" to="/viewprofile">
                   <span>
                     <i className="bi  bi bi-gear-fill me-2"></i>
                     <span className="fs-7">Editar perfil</span>
@@ -70,16 +70,16 @@ function AvatarClient() {
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <li>
+              {/* <li>
                 <Link className="dropdown-item" to="/addProduct">
                   <span>
                     <i className=" bi bi-truck mb-3 me-2"></i>
                     <span className="fs-7">Direcciones</span>
                   </span>
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link className="dropdown-item" to="/addProduct">
+                <Link className="dropdown-item" to="/favorites">
                   <span>
                     <i className=" bi bi-heart-fill mb-3 me-2"></i>
                     <span className="fs-7">Favoritos</span>
