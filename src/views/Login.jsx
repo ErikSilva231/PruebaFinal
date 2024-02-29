@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { ToastError } from "../components/Form/Toast";
 import axios from "axios";
-import { useNavigate, Link} } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 
 import UserDataContext from "../context/UserContext";
 const { VITE_APP_URL } = import.meta.env;
